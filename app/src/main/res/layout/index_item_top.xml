@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#fff"
+              android:orientation="vertical">
+
+
+    <com.example.yingfu.line.ObservableScrollView
+        android:id="@+id/top_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/top_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
+    </com.example.yingfu.line.ObservableScrollView>
+
+    <com.example.yingfu.line.TIndexLineView
+        android:id="@+id/top_line"
+        android:layout_width="16dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="#90eeeeee"/>
+
+</LinearLayout>
