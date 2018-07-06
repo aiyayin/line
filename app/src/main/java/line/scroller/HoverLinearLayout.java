@@ -1,10 +1,9 @@
-package com.example.yingfu.line;
+package line.scroller;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -20,7 +19,6 @@ import android.widget.OverScroller;
 public class HoverLinearLayout extends ViewGroup {
     private OverScroller mOverScroller;
     private float mLastY;
-    private float mMinimumVelocity;
     private float mMaximumVelocity;
     private float mTouchSlop;
     private VelocityTracker mVelocityTracker;
@@ -70,7 +68,6 @@ public class HoverLinearLayout extends ViewGroup {
         mVelocityTracker = VelocityTracker.obtain();
         final ViewConfiguration configuration = ViewConfiguration.get(context);
         mTouchSlop = configuration.getScaledTouchSlop();
-        mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
         mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
     }
 
@@ -140,10 +137,6 @@ public class HoverLinearLayout extends ViewGroup {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
         }
-    }
-
-    private int dptopx(int dp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
 
     private int getScreenHeight() {

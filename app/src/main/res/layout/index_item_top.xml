@@ -6,7 +6,7 @@
               android:orientation="vertical">
 
 
-    <com.example.yingfu.line.ObservableScrollView
+    <line.line.ObservableScrollView
         android:id="@+id/top_viewpager"
         android:layout_width="match_parent"
         android:layout_height="98dp"
@@ -17,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"/>
-    </com.example.yingfu.line.ObservableScrollView>
+    </line.line.ObservableScrollView>
 
-    <com.example.yingfu.line.TIndexLineView
+    <line.line.IndexLineView
         android:id="@+id/top_line"
         android:layout_width="16dp"
         android:layout_height="2dp"

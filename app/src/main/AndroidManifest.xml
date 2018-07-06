@@ -9,15 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="line.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".IndexLineActivity"/>
-        <activity android:name=".ScrollViewActivity"/>
+        <activity android:name="line.line.IndexLineActivity"/>
+        <activity android:name="line.scroller.ScrollViewActivity"/>
+        <activity android:name="line.bezier.BezierActivity"/>
     </application>
 
 </manifest>

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TIndexLineView">
+    <declare-styleable name="IndexLineView">
         <attr name="width" format="dimension"/>
         <attr name="index_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="WaveView">
+        <attr name="color" format="color"/>
     </declare-styleable>
 </resources>
 
