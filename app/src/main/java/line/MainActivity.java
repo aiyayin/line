@@ -9,9 +9,10 @@ import android.view.View;
 import com.example.yingfu.line.R;
 
 import line.bezier.BezierActivity;
+import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
 import line.scroller.ScrollViewActivity;
-import line.javafoundation.tree.TreeActivity;
+import line.svg.SVGActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.HoverLinearLayout).setOnClickListener(this);
         findViewById(R.id.Bezier).setOnClickListener(this);
         findViewById(R.id.tree).setOnClickListener(this);
+        findViewById(R.id.SVG).setOnClickListener(this);
     }
 
     @Override
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tree:
                 intent.setClass(this, TreeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.SVG:
+                intent.setClass(this, SVGActivity.class);
                 startActivity(intent);
                 break;
         }

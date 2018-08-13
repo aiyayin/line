@@ -21,6 +21,7 @@
         <activity android:name="line.scroller.ScrollViewActivity"/>
         <activity android:name="line.bezier.BezierActivity"/>
         <activity android:name="line.javafoundation.tree.TreeActivity"/>
+        <activity android:name="line.svg.SVGActivity"/>
     </application>
 
 </manifest>
