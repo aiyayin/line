@@ -25,7 +25,7 @@ public class IndexLineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_item_top);
 
-        horizontalScrollView = findViewById(R.id.top_viewpager);
+        horizontalScrollView = findViewById(R.id.top_scrollview);
         mLayout = findViewById(R.id.top_ll);
         mLineView = findViewById(R.id.top_line);
 

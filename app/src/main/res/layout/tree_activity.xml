@@ -7,27 +7,26 @@
               android:orientation="vertical">
 
     <TextView
-        android:id="@+id/line"
+        android:id="@+id/level"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="line"/>
+        android:text="level"/>
 
     <TextView
-        android:id="@+id/HoverLinearLayout"
+        android:id="@+id/prePrint"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="HoverLinearLayout"/>
+        android:text="prePrint"/>
 
     <TextView
-        android:id="@+id/Bezier"
+        android:id="@+id/inPrint"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:text="Bezier"/>
+        android:text="inPrint"/>
 
     <TextView
-        android:id="@+id/tree"
+        android:id="@+id/postPrint"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:gravity="center"
-        android:text="tree"/>
+        android:text="postPrint"/>
 </LinearLayout>

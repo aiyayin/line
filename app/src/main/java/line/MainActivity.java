@@ -11,6 +11,7 @@ import com.example.yingfu.line.R;
 import line.bezier.BezierActivity;
 import line.line.IndexLineActivity;
 import line.scroller.ScrollViewActivity;
+import line.tree.TreeActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.line).setOnClickListener(this);
         findViewById(R.id.HoverLinearLayout).setOnClickListener(this);
         findViewById(R.id.Bezier).setOnClickListener(this);
+        findViewById(R.id.tree).setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.Bezier:
                 intent.setClass(this, BezierActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tree:
+                intent.setClass(this, TreeActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -7,7 +7,7 @@
 
 
     <line.line.ObservableScrollView
-        android:id="@+id/top_viewpager"
+        android:id="@+id/top_scrollview"
         android:layout_width="match_parent"
         android:layout_height="98dp"
         android:scrollbars="none">
@@ -26,5 +26,20 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:background="#90eeeeee"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/top_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="98dp">
+    </android.support.v4.view.ViewPager>
+
+    <line.line.IndexLineView
+        android:id="@+id/top_line_two"
+        android:layout_width="16dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:background="#90eeeeee"/>
+
 
 </LinearLayout>
