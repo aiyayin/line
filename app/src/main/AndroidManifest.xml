@@ -20,7 +20,7 @@
         <activity android:name="line.line.IndexLineActivity"/>
         <activity android:name="line.scroller.ScrollViewActivity"/>
         <activity android:name="line.bezier.BezierActivity"/>
-        <activity android:name="line.tree.TreeActivity"/>
+        <activity android:name="line.javafoundation.tree.TreeActivity"/>
     </application>
 
 </manifest>

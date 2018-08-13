@@ -1,4 +1,4 @@
-package line.tree;
+package line.javafoundation.tree;
 
 /**
  *

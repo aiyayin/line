@@ -11,7 +11,7 @@ import com.example.yingfu.line.R;
 import line.bezier.BezierActivity;
 import line.line.IndexLineActivity;
 import line.scroller.ScrollViewActivity;
-import line.tree.TreeActivity;
+import line.javafoundation.tree.TreeActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

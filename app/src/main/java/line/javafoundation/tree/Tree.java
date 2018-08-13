@@ -1,4 +1,4 @@
-package line.tree;
+package line.javafoundation.tree;
 
 /**
  * Created by ying.fu on 2018/7/16.
