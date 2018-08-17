@@ -3,10 +3,6 @@ package line.javafoundation.producer_consumer;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by ying.fu on 2018/8/9.
- */
-
 public class Storage<T> {
     private int index = 0;
     private static final int MAX = 10;

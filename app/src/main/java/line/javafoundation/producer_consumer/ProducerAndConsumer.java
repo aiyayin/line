@@ -1,10 +1,9 @@
 package line.javafoundation.producer_consumer;
 
-/**
- *
- * Created by ying.fu on 2018/8/9.
- */
 
+/**
+ * 网上代码 用于理解synchronized
+ */
 public class ProducerAndConsumer {
     public static void main(String[] args) {
         Storage<Phone> storage = new Storage<Phone>();

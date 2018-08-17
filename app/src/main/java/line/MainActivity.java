@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.yingfu.line.R;
 
 import line.bezier.BezierActivity;
+import line.javafoundation.bitmask.BitMask1;
 import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
 import line.scroller.ScrollViewActivity;

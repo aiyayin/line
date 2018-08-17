@@ -1,8 +1,5 @@
 package line.javafoundation.producer_consumer;
 
-/**
- * Created by ying.fu on 2018/8/9.
- */
 
 public class Consumer implements Runnable {
     private Storage<Phone> storage;
