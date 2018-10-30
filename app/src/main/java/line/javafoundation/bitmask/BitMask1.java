@@ -1,6 +1,7 @@
 package line.javafoundation.bitmask;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  * Created by ying.fu.
@@ -27,12 +28,9 @@ public class BitMask1 {
     private void b(int t, int l, int r) {
         ArrayList<Integer> t_int = new ArrayList<>();
         intToBinary(t, t_int);
-        print(t_int);
-
 
         ArrayList<Integer> r_int = new ArrayList<>();
         intToBinary(r, r_int);
-        print(r_int);
 
         getMax(t_int, r_int, l, r);
     }
@@ -48,7 +46,6 @@ public class BitMask1 {
     private void getMax(ArrayList<Integer> t_int, ArrayList<Integer> r_int, int l, int r) {
         ArrayList<Integer> result = new ArrayList<>();
         result.addAll(r_int);
-
         /**
          * 依次取最高位 置为t相应位置相反的数(0,1)
          */
@@ -56,37 +53,22 @@ public class BitMask1 {
             int t = 0;
             if (s < t_int.size())
                 t = t_int.get(s);
-            result.remove(s);
-            result.add(s, t ^ 1);
-
-            print(result);
-
+            result.set(s, t ^ 1);
+            result.toArray();
+//            System.out.println(result);
             int k = binaryToInt(result);
             if (k < l || k > r) {
                 /**
                  * 若置换该位置不在范围内 复原
                  */
-                result.remove(s);
-                result.add(s, r_int.get(s));
+                result.set(s, r_int.get(s));
             }
-            print(result);
         }
+        Logger logger = Logger.getLogger("getMax result: ");
+        logger.severe( binaryToInt(result) + "\n");
         System.out.print("getMax result: " + binaryToInt(result) + "\n");
     }
 
-
-    /**
-     * 输出二进制数
-     *
-     * @param t_int
-     */
-    private void print(ArrayList<Integer> t_int) {
-        System.out.print("intToBinary i_int : ");
-        for (int i = 0; i < t_int.size(); i++) {
-            System.out.print(t_int.get(i));
-        }
-        System.out.print("\n");
-    }
 
     /**
      * int转二进制
@@ -106,22 +88,15 @@ public class BitMask1 {
         for (int i = 1; i < t_int.size(); i++) {
             result = (int) (result + t_int.get(i) * Math.pow(2, i));
         }
-        System.out.print("binaryToInt result: " + result + "\n");
         return result;
     }
 
     public static void main(String[] args) {
         BitMask1 bitMask1 = new BitMask1();
-        bitMask1.b(100, 50, 60);
-//        59
-        bitMask1.b(100, 50, 50);
-//        50
-        bitMask1.b(100, 0, 100);
-//        27
-        bitMask1.b(1, 0, 100);
-//        100
-        bitMask1.b(15, 1, 15);
-//        1
-
+        bitMask1.b(100, 50, 60);//59
+        bitMask1.b(100, 50, 50);//50
+        bitMask1.b(100, 0, 100);//27
+        bitMask1.b(1, 0, 100);//100
+        bitMask1.b(15, 1, 15);//1
     }
 }

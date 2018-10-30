@@ -4,24 +4,25 @@
 
     <application
         android:name="line.LineApplication"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="line.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name="line.line.IndexLineActivity"/>
         <activity android:name="line.scroller.ScrollViewActivity"/>
         <activity android:name="line.bezier.BezierActivity"/>
         <activity android:name="line.javafoundation.tree.TreeActivity"/>
         <activity android:name="line.svg.SVGActivity"/>
+        <activity android:name="line.viewpager.ViewPagerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
