@@ -1,7 +1,9 @@
 package line;
 
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,14 +11,18 @@ import android.view.View;
 import com.example.yingfu.line.R;
 
 import line.bezier.BezierActivity;
-import line.javafoundation.bitmask.BitMask1;
 import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
 import line.scroller.ScrollViewActivity;
 import line.svg.SVGActivity;
+import line.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private ComponentName mDefault;
+    private ComponentName mDouble11;
+    private ComponentName mDouble;
+    private PackageManager mPm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.Bezier).setOnClickListener(this);
         findViewById(R.id.tree).setOnClickListener(this);
         findViewById(R.id.SVG).setOnClickListener(this);
+        findViewById(R.id.viewpager).setOnClickListener(this);
+
+        mDefault = getComponentName();
+        mDouble11 = new ComponentName(getBaseContext(), "com.example.yingfu.line.redLine");
+        mDouble = new ComponentName(getBaseContext(), "com.example.yingfu.line.Line");
+        mPm = getApplicationContext().getPackageManager();
     }
 
     @Override
@@ -37,10 +49,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.line:
                 intent.setClass(this, IndexLineActivity.class);
                 startActivity(intent);
+//                changeIcon();
                 break;
             case R.id.HoverLinearLayout:
                 intent.setClass(this, ScrollViewActivity.class);
                 startActivity(intent);
+//                changeIconDefault();
                 break;
             case R.id.Bezier:
                 intent.setClass(this, BezierActivity.class);
@@ -54,6 +68,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.setClass(this, SVGActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.viewpager:
+                intent.setClass(this, ViewPagerActivity.class);
+                startActivity(intent);
+                break;
         }
     }
+
+
+    public void changeIconDefault() {
+        disableComponent(mDouble11);
+        enableComponent(mDouble);
+    }
+
+    public void changeIcon() {
+        disableComponent(mDefault);
+        enableComponent(mDouble11);
+    }
+
+
+    private void disableComponent(ComponentName componentName) {
+        mPm.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+    }
+
+    private void enableComponent(ComponentName componentName) {
+        mPm.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+    }
+
 }
