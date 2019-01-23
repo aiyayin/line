@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import com.example.yingfu.line.R;
@@ -15,7 +14,7 @@ import line.util.ToolUtil;
 
 /**
  * @author YING.FU
- *         date: 2018-05-31
+ * date: 2018-05-31
  */
 
 public class IndexLineView extends View {
@@ -50,16 +49,20 @@ public class IndexLineView extends View {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
     }
 
+    int halfHeight;
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        indexHeight = getMeasuredHeight();
+        mPaint.setStrokeWidth(indexHeight);
+        halfHeight = indexHeight / 2;
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        indexHeight = getMeasuredHeight();
-        mPaint.setStrokeWidth(indexHeight);
-        int w = indexHeight / 2;
-        Log.e("ying>>>", "move: w  " + indexHeight);
-        Log.e("ying>>>", "move: width  " + indexWidth);
-
-        canvas.drawLine(left + w, w, left + indexWidth - w, w, mPaint);
+        canvas.drawLine(left + halfHeight, halfHeight, left + indexWidth - halfHeight, halfHeight, mPaint);
     }
 
     public void move(int left) {
@@ -73,4 +76,7 @@ public class IndexLineView extends View {
         invalidate();
     }
 
+    public int getIndexWidth() {
+        return indexWidth;
+    }
 }

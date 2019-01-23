@@ -3,9 +3,17 @@ package line.bezier;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -23,6 +31,7 @@ public class WaveView extends View {
     private Paint mPaint;
 
     private Path mPath;
+    private Path mWaveLimitPath;
     //一个波纹长度
     private int mWaveH = 80;
     private int mWaveW = 600;
@@ -32,6 +41,8 @@ public class WaveView extends View {
     private int offset;
 
     private int mCenterY;
+    private int mBitmapLeft;
+    private int mBitmapTop;
 
     //屏幕高度
     private int mScreenHeight;
@@ -57,12 +68,23 @@ public class WaveView extends View {
         initAnimator();
     }
 
+    Bitmap bitmapWhite, bitmap;
+    Matrix matrix;
+    Shader bitmapShader;
+
     private void init() {
         mPath = new Path();
-        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mWaveLimitPath = new Path();
+        mPaint = new Paint();
         mPaint.setColor(indexColor);
-        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-//        mPath.setFillType(Path.FillType.EVEN_ODD);
+        bitmapWhite = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ya_white);
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ya);
+        matrix = new Matrix();
+        bitmapShader = new BitmapShader(bitmapWhite, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        Shader colorShader = new LinearGradient(0, 0, mScreenWidth, mScreenHeight, indexColor, indexColor, Shader.TileMode.REPEAT);
+        ComposeShader composeShader = new ComposeShader(colorShader, bitmapShader, PorterDuff.Mode.SRC_ATOP);
+        mPaint.setShader(composeShader);
+        mPaint.setAntiAlias(true);
     }
 
     @Override
@@ -71,6 +93,8 @@ public class WaveView extends View {
         mScreenHeight = h;
         mScreenWidth = w;
         mWaveCount = mScreenWidth / mWaveW + 3;
+        mBitmapLeft = mScreenWidth / 2 - bitmapWhite.getWidth()/2;
+        mBitmapTop = mScreenHeight / 2 - bitmapWhite.getHeight()/2;
         Log.e("ying>>>", "onSizeChanged: " + mWaveCount);
         mCenterY = mScreenHeight / 2;
     }
@@ -78,8 +102,12 @@ public class WaveView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        mWaveLimitPath.reset();
         mPath.reset();
+        matrix.setTranslate(mBitmapLeft, mBitmapTop);
+        bitmapShader.setLocalMatrix(matrix);
+        canvas.drawBitmap(bitmap, mBitmapLeft, mBitmapTop, mPaint);
+//        canvas.drawBitmap(bitmap, 0, 0, mPaint1);
         mPath.moveTo(0, mCenterY + offset);
         for (int i = 0; i < mWaveCount; i++) {
 //        quadTo方法中的四个参数分别是确定第二，第三的点的。第一个点就是path上次操作的点。
@@ -89,7 +117,10 @@ public class WaveView extends View {
         mPath.lineTo(mScreenWidth, mScreenHeight);
         mPath.lineTo(0, mScreenHeight);
         mPath.close();
-        canvas.drawPath(mPath, mPaint);
+        mWaveLimitPath.addCircle(mScreenWidth / 2, mScreenHeight / 2, Math.min(mScreenHeight, mScreenWidth) / 2, Path.Direction.CCW);
+        mWaveLimitPath.op(mPath, Path.Op.INTERSECT);//取重叠部分
+        canvas.drawPath(mWaveLimitPath, mPaint);
+
     }
 
     private void initAnimator() {

@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.yingfu.line.R;
 
+import line.javafoundation.file.file;
 import line.util.ToolUtil;
 
 public class TreeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -35,6 +36,17 @@ public class TreeActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.prePrint).setOnClickListener(this);
         findViewById(R.id.inPrint).setOnClickListener(this);
         findViewById(R.id.postPrint).setOnClickListener(this);
+
+        readFile();
+    }
+
+    private void readFile() {
+        file file = new file();
+        Log.e("ying>>>>1", file.readAssetsFile(this));
+        file.writeFile(this);
+        Log.e("ying>>>>22", file.readFile(this));
+        file.writeFile(this);
+        Log.e("ying>>>>333", file.readFile(this));
     }
 
     @Override

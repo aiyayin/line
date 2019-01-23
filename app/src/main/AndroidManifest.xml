@@ -11,11 +11,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name="line.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>  
+        </activity>
         <!--<activity-alias-->
             <!--android:name=".redLine"-->
             <!--android:label="@string/app_name"-->
@@ -38,7 +34,12 @@
                 <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
     <!--</activity-alias>-->
-        <activity android:name="line.line.IndexLineActivity"/>
+        <activity android:name="line.line.IndexLineActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name="line.scroller.ScrollViewActivity"/>
         <activity android:name="line.bezier.BezierActivity"/>
         <activity android:name="line.javafoundation.tree.TreeActivity"/>

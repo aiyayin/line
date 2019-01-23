@@ -15,9 +15,9 @@ public class IndexTop {
 
     public List<IndexTopItem> getTopItems() {
         if (mTopItems.size() == 0) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 8; i++) {
                 IndexTopItem item = new IndexTopItem();
-                item.setName("第" + i + "个");
+                item.setName("第" + (i+1)+ "个");
                 item.setImgDrawable(R.drawable.index_top_company);
                 mTopItems.add(item);
             }

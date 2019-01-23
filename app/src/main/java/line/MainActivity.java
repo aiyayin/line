@@ -7,9 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import com.example.yingfu.line.R;
-
 import line.bezier.BezierActivity;
 import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
@@ -49,12 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.line:
                 intent.setClass(this, IndexLineActivity.class);
                 startActivity(intent);
-//                changeIcon();
                 break;
             case R.id.HoverLinearLayout:
                 intent.setClass(this, ScrollViewActivity.class);
                 startActivity(intent);
-//                changeIconDefault();
                 break;
             case R.id.Bezier:
                 intent.setClass(this, BezierActivity.class);

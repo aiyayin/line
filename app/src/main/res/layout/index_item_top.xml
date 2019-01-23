@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:background="#fff"
               android:orientation="vertical">
 
@@ -9,7 +10,7 @@
     <line.line.ObservableScrollView
         android:id="@+id/top_scrollview"
         android:layout_width="match_parent"
-        android:layout_height="98dp"
+        android:layout_height="128dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -21,25 +22,36 @@
 
     <line.line.IndexLineView
         android:id="@+id/top_line"
-        android:layout_width="16dp"
-        android:layout_height="2dp"
+        android:layout_width="24dp"
+        android:layout_height="4dp"
+        app:index_color="@color/blue"
+        app:width="10dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:background="#90eeeeee"/>
+        android:background="@drawable/index_line_bg"/>
+
+<android.support.design.widget.TabLayout
+    android:id="@+id/tab_layout"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/blue"
+    android:scrollbars="none"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/top_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="98dp">
+        android:layout_height="300dp">
     </android.support.v4.view.ViewPager>
 
     <line.line.IndexLineView
         android:id="@+id/top_line_two"
-        android:layout_width="16dp"
-        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        app:index_color="@color/blue"
+        app:width="90dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:background="#90eeeeee"/>
+        android:layout_marginBottom="10dp"/>
 
 
 </LinearLayout>
