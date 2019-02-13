@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               heroTag: "btnDecrease",
               onPressed: _decreaseCounter,
-              tooltip: 'Increment',
+              tooltip: 'Decrease',
               child: Icon(Icons.minimize),
             ),
             FlatButton(
