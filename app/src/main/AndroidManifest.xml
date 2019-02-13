@@ -8,43 +8,23 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        android:theme="@style/AppTheme">
         <activity android:name="line.MainActivity">
         </activity>
-        <!--<activity-alias-->
-            <!--android:name=".redLine"-->
-            <!--android:label="@string/app_name"-->
-            <!--android:enabled="false"-->
-            <!--android:icon="@mipmap/ic_launcher_1"-->
-            <!--android:targetActivity="line.MainActivity">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
-    <!--</activity-alias>-->
-        <!--<activity-alias-->
-            <!--android:name=".Line"-->
-            <!--android:label="@string/app_name"-->
-            <!--android:enabled="false"-->
-            <!--android:icon="@mipmap/ic_launcher"-->
-            <!--android:targetActivity="line.MainActivity">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
-    <!--</activity-alias>-->
         <activity android:name="line.line.IndexLineActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name="line.scroller.ScrollViewActivity"/>
         <activity android:name="line.bezier.BezierActivity"/>
         <activity android:name="line.javafoundation.tree.TreeActivity"/>
         <activity android:name="line.svg.SVGActivity"/>
         <activity android:name="line.viewpager.ViewPagerActivity">
+        </activity>
+        <activity android:name="line.flutter.MyFlutterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 
