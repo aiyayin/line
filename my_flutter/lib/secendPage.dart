@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:my_flutter/RouteUtil.dart';
 
 class NewRoute extends StatefulWidget {
@@ -17,8 +18,11 @@ class NewRoute extends StatefulWidget {
 }
 
 class _NewRoutePageState extends State<NewRoute> {
+  BuildContext mContext;
+
   @override
   Widget build(BuildContext context) {
+    mContext = context;
     final int wordPair = new math.Random().nextInt(100);
     Center content = new Center(
       heightFactor: 3,
@@ -70,7 +74,31 @@ class _NewRoutePageState extends State<NewRoute> {
                     )))),
         onWillPop: () {
           Navigator.of(context).pop(wordPair);
-          RouteUtil.routeCounter--;
+          _setStackCounter();
         });
+  }
+
+  Future<Null> _setStackCounter() async {
+    RouteUtil.routeCounter--;
+    Map<String, String> map = {"flutter": RouteUtil.routeCounter.toString()};
+    String result = await RouteUtil.jumpPlugin.invokeMethod('twoAct', map);
+
+    print(result);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    RouteUtil.jumpPlugin.setMethodCallHandler(platformCallHandler);
+  }
+
+  Future<dynamic> platformCallHandler(MethodCall call) async {
+    switch (call.method) {
+      case "back":
+        print('ying>>> flutter back 就要成功了');
+        RouteUtil.routeCounter--;
+        return Navigator.pop(mContext);
+        break;
+    }
   }
 }
