@@ -8,43 +8,37 @@
 
     <TextView
         android:id="@+id/line"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:gravity="center"
+        style="@style/Txt_Main"
         android:text="line"/>
 
     <TextView
         android:id="@+id/HoverLinearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:gravity="center"
+        style="@style/Txt_Main"
         android:text="HoverLinearLayout"/>
 
     <TextView
         android:id="@+id/Bezier"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:gravity="center"
+        style="@style/Txt_Main"
         android:text="Bezier"/>
 
     <TextView
         android:id="@+id/tree"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:gravity="center"
+        style="@style/Txt_Main"
         android:text="tree"/>
+
     <TextView
         android:id="@+id/SVG"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:gravity="center"
+        style="@style/Txt_Main"
         android:text="SVG"/>
 
     <TextView
         android:id="@+id/viewpager"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:gravity="center"
+        style="@style/Txt_Main"
         android:text="ViewPager"/>
+
+    <TextView
+        android:id="@+id/flutter"
+        style="@style/Txt_Main"
+        android:text="flutter"/>
 
 </LinearLayout>

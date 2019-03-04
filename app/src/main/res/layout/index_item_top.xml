@@ -37,11 +37,11 @@
     android:background="@color/blue"
     android:scrollbars="none"/>
 
-    <android.support.v4.view.ViewPager
+    <androidx.core.view.ViewPager
         android:id="@+id/top_viewpager"
         android:layout_width="match_parent"
         android:layout_height="300dp">
-    </android.support.v4.view.ViewPager>
+    </androidx.core.view.ViewPager>
 
     <line.line.IndexLineView
         android:id="@+id/top_line_two"

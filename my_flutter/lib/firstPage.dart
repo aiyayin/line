@@ -34,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print('ying>>> flutter build ');
     return Scaffold(
 //      appBar: AppBar(
 //         title: Text(widget.title),

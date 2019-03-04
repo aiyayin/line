@@ -2,12 +2,8 @@ package line.line;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +13,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.yingfu.line.R;
+import com.google.android.material.tabs.TabLayout;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import line.util.ToolUtil;
 
 public class IndexLineActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
@@ -81,7 +82,7 @@ public class IndexLineActivity extends AppCompatActivity implements BlankFragmen
         });
     }
 
-    private List<android.support.v4.app.Fragment> mFragments = new ArrayList<>();
+    private List<Fragment> mFragments = new ArrayList<>();
 
     @Override
     public void onFragmentInteraction(@NotNull Uri uri) {
@@ -97,7 +98,7 @@ public class IndexLineActivity extends AppCompatActivity implements BlankFragmen
 
 
         @Override
-        public android.support.v4.app.Fragment getItem(int position) {
+        public Fragment getItem(int position) {
             return mFragments.get(position);
         }
 

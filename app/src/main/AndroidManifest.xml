@@ -10,6 +10,12 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label">
         <activity android:name="line.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name="line.line.IndexLineActivity">
         </activity>
@@ -20,12 +26,7 @@
         <activity android:name="line.viewpager.ViewPagerActivity">
         </activity>
         <activity android:name="line.flutter.MyFlutterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
     </application>
 

@@ -1,7 +1,7 @@
 package line.flutter
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -19,6 +19,7 @@ class MyFlutterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flutter)
+        Log.e("ying>>>","MyFlutterActivity onCreate after setContentView")
 
         val flutterView = Flutter.createView(
                 this@MyFlutterActivity, lifecycle,
@@ -26,6 +27,7 @@ class MyFlutterActivity : AppCompatActivity() {
         )
         val layout = FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         addContentView(flutterView, layout)
+        Log.e("ying>>>","MyFlutterActivity onCreate after addContentView")
     }
 
     override fun onBackPressed() {
