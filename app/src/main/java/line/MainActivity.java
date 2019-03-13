@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+
 import com.example.yingfu.line.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 import line.bezier.BezierActivity;
 import line.flutter.MyFlutterActivity;
 import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
+import line.panorama.GoogleVRActivity;
+import line.panorama.OpenGLActivity;
 import line.scroller.ScrollViewActivity;
 import line.svg.SVGActivity;
 import line.viewpager.ViewPagerActivity;
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.SVG).setOnClickListener(this);
         findViewById(R.id.viewpager).setOnClickListener(this);
         findViewById(R.id.flutter).setOnClickListener(this);
+        findViewById(R.id.open_gl).setOnClickListener(this);
+        findViewById(R.id.google).setOnClickListener(this);
 
         mDefault = getComponentName();
         mDouble11 = new ComponentName(getBaseContext(), "com.example.yingfu.line.redLine");
@@ -72,6 +78,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.flutter:
                 intent.setClass(this, MyFlutterActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.open_gl:
+                intent.setClass(this, OpenGLActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.google:
+                intent.setClass(this, GoogleVRActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -41,4 +41,14 @@
         style="@style/Txt_Main"
         android:text="flutter"/>
 
+    <TextView
+        android:id="@+id/open_gl"
+        style="@style/Txt_Main"
+        android:text="OpenGl"/>
+
+    <TextView
+        android:id="@+id/google"
+        style="@style/Txt_Main"
+        android:text="GoogleVr"/>
+
 </LinearLayout>
