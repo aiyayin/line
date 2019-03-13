@@ -3,6 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.example.yingfu.line">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:name="line.LineApplication"
         android:icon="@mipmap/ic_launcher"
@@ -28,9 +29,9 @@
         </activity>
         <activity android:name="line.flutter.MyFlutterActivity"/>
         <activity android:name="line.panorama.OpenGLActivity"/>
+        <activity android:name="line.video360.VideoActivity"/>
         <activity android:name="line.panorama.GoogleVRActivity">
-
         </activity>
     </application>
-    <uses-sdk tools:overrideLibrary="com.google.vr.widgets.pano,com.google.vr.widgets.common"/>
+    <uses-sdk tools:overrideLibrary="com.google.vr.widgets.pano,com.google.vr.widgets.common,com.google.vr.sdk.widgets.pano,com.google.vr.cardboard"/>
 </manifest>
