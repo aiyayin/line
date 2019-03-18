@@ -16,26 +16,15 @@
 
 package line.video360.rendering;
 
-import android.graphics.PointF;
 import android.graphics.SurfaceTexture;
 import android.graphics.SurfaceTexture.OnFrameAvailableListener;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
-import android.os.Handler;
-import android.os.SystemClock;
 import android.util.Log;
-import android.view.InputDevice;
-import android.view.MotionEvent;
 import android.view.Surface;
-
-import com.google.vr.sdk.controller.Orientation;
 import java.util.concurrent.atomic.AtomicBoolean;
-
 import androidx.annotation.AnyThread;
-import androidx.annotation.BinderThread;
-import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;
-
 import static line.video360.rendering.Utils.checkGlError;
 
 /**
@@ -63,17 +52,9 @@ public final class SceneRenderer {
   private Mesh requestedDisplayMesh;
   private int displayTexId;
 
-  // These are only valid if createForVR() has been called. In the 2D Activity, these are null
-  // since the UI is rendered in the standard Android layout.
-  @Nullable
-  private final CanvasQuad canvasQuad;
-  @Nullable
-  private final Handler uiHandler;
 
   // Controller components.
   private final Reticle reticle = new Reticle();
-  @Nullable
-  private Orientation controllerOrientation;
   // This is accessed on the binder & GL Threads.
   private final float[] controllerOrientationMatrix = new float[16];
 
@@ -81,10 +62,8 @@ public final class SceneRenderer {
    * Constructs the SceneRenderer with the given values.
    */
   /* package */ SceneRenderer(
-      CanvasQuad canvasQuad,  Handler uiHandler,
       SurfaceTexture.OnFrameAvailableListener externalFrameListener) {
-    this.canvasQuad = canvasQuad;
-    this.uiHandler = uiHandler;
+
     this.externalFrameListener = externalFrameListener;
   }
 
@@ -93,7 +72,7 @@ public final class SceneRenderer {
    * initializing the object on the GL thread.
    */
   public static SceneRenderer createFor2D() {
-    return new SceneRenderer(null, null, null);
+    return new SceneRenderer( null);
   }
 
 
@@ -129,9 +108,6 @@ public final class SceneRenderer {
           }
         });
 
-    if (canvasQuad != null) {
-      canvasQuad.glInit();
-    }
     reticle.glInit();
   }
 
@@ -220,69 +196,4 @@ public final class SceneRenderer {
 
     reticle.glDraw(viewProjectionMatrix, controllerOrientationMatrix);
   }
-
-  /** Cleans up the GL resources. */
-  public void glShutdown() {
-    if (displayMesh != null) {
-      displayMesh.glShutdown();
-    }
-    if (canvasQuad != null) {
-      canvasQuad.glShutdown();
-    }
-    reticle.glShutdown();
-  }
-
-  /** Updates the Reticle's position with the latest Controller pose. */
-  @BinderThread
-  public synchronized void setControllerOrientation(Orientation currentOrientation) {
-    this.controllerOrientation = currentOrientation;
-    controllerOrientation.toRotationMatrix(controllerOrientationMatrix);
-  }
-
-  /**
-   * Processes Daydream Controller clicks and dispatches the event to {} as a
-   * synthetic {@link MotionEvent}.
-   *
-   * <p>This is a minimal input system that works because CanvasQuad is a simple rectangle with a
-   * hardcoded location. If the quad had a transformation matrix, then those transformations would
-   * need to be used when converting from the Controller's pose to a 2D click event.
-   */
-  @MainThread
-  public void handleClick() {
-
-    if (controllerOrientation == null) {
-      // Race condition between click & pose events.
-      return;
-    }
-
-    final PointF clickTarget = CanvasQuad.translateClick(controllerOrientation);
-    if (clickTarget == null) {
-      // When the click is outside of the View, hide the UI.
-//      toggleUi();
-      return;
-    }
-
-    // The actual processing of the synthetic event needs to happen in the UI thread.
-    uiHandler.post(
-        new Runnable() {
-          @Override
-          public void run() {
-            // Generate a pair of down/up events to make the Android View processing handle the
-            // click.
-            long now = SystemClock.uptimeMillis();
-            MotionEvent down = MotionEvent.obtain(
-                now, now,  // Timestamps.
-                MotionEvent.ACTION_DOWN, clickTarget.x, clickTarget.y,  // The important parts.
-                1, 1, 0, 1, 1, 0, 0);  // Unused config data.
-            down.setSource(InputDevice.SOURCE_GAMEPAD);
-
-
-            // Clone the down event but change action.
-            MotionEvent up = MotionEvent.obtain(down);
-            up.setAction(MotionEvent.ACTION_UP);
-          }
-        });
-  }
-
-
 }

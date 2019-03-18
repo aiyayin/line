@@ -17,8 +17,6 @@
 package line.video360;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.PointF;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -27,13 +25,9 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
-import android.view.View;
 import com.google.vr.sdk.base.Eye.Type;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-
 import androidx.annotation.AnyThread;
 import androidx.annotation.BinderThread;
 import androidx.annotation.UiThread;
@@ -68,7 +62,6 @@ public final class MonoscopicView extends GLSurfaceView {
    * Finishes initialization. This should be called immediately after the View is inflated.
    */
   public void initialize() {
-
     mediaLoader = new MediaLoader(getContext());
 
     // Configure OpenGL.
@@ -97,13 +90,11 @@ public final class MonoscopicView extends GLSurfaceView {
     // Use the fastest sensor readings.
     sensorManager.registerListener(
         phoneOrientationListener, orientationSensor, SensorManager.SENSOR_DELAY_FASTEST);
-    mediaLoader.resume();
   }
 
   /** Stops the sensors & video when the View is inactive to avoid wasting battery. */
   @Override
   public void onPause() {
-    mediaLoader.pause();
     sensorManager.unregisterListener(phoneOrientationListener);
     super.onPause();
   }
@@ -114,7 +105,7 @@ public final class MonoscopicView extends GLSurfaceView {
   }
 
   /** Parses the Intent and loads the appropriate media. */
-  public void loadMedia(Intent intent) {
+  public void loadMedia() {
     mediaLoader.loadImage();
   }
 
@@ -185,7 +176,7 @@ public final class MonoscopicView extends GLSurfaceView {
     private final float[] tempMatrix = new float[16];
     private final MediaLoader mediaLoader;
 
-    public Renderer(MediaLoader mediaLoader) {
+    public Renderer( MediaLoader mediaLoader) {
       Matrix.setIdentityM(deviceOrientationMatrix, 0);
       Matrix.setIdentityM(touchPitchMatrix, 0);
       Matrix.setIdentityM(touchYawMatrix, 0);

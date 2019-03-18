@@ -22,7 +22,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.media.MediaPlayer;
 import android.view.Surface;
 import com.example.yingfu.line.R;
 import androidx.annotation.AnyThread;
@@ -50,19 +49,14 @@ public class MediaLoader {
     /**
      * The 360 x 180 sphere has 15 degree quads. Increase these if lines in your video look wavy.
      */
-    private static final int DEFAULT_SPHERE_ROWS = 12;
-    private static final int DEFAULT_SPHERE_COLUMNS = 24;
+    private static final int DEFAULT_SPHERE_ROWS = 36;
+    private static final int DEFAULT_SPHERE_COLUMNS = 72;
 
     private final Context context;
-    // This can be replaced by any media player that renders to a Surface. In a real app, this
-    // media player would be separated from the rendering code. It is left in this class for
-    // simplicity.
-    // This should be set or cleared in a synchronized manner.
-    MediaPlayer mediaPlayer;
     // This sample also supports loading images.
     Bitmap mediaImage;
     // If the video or image fails to load, a placeholder panorama is rendered with error text.
-    String errorText = "If the video or image fails to load, a placeholder panorama is rendered with error text.";
+    String errorText;
 
     // Due to the slow loading media times, it's possible to tear down the app before mediaPlayer is
     // ready. In that case, abandon all the pending work.
@@ -90,7 +84,7 @@ public class MediaLoader {
                 SPHERE_RADIUS_METERS, DEFAULT_SPHERE_ROWS, DEFAULT_SPHERE_COLUMNS,
                 DEFAULT_SPHERE_VERTICAL_DEGREES, DEFAULT_SPHERE_HORIZONTAL_DEGREES,
                 Mesh.MEDIA_MONOSCOPIC);
-        mediaImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.ball);
+        mediaImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.timg);
 
         displayWhenReady();
     }
@@ -111,11 +105,6 @@ public class MediaLoader {
     @AnyThread
     private synchronized void displayWhenReady() {
         if (isDestroyed) {
-            // This only happens when the Activity is destroyed immediately after creation.
-            if (mediaPlayer != null) {
-                mediaPlayer.release();
-                mediaPlayer = null;
-            }
             return;
         }
 
@@ -125,12 +114,12 @@ public class MediaLoader {
             return;
         }
 
-        if ((errorText == null && mediaImage == null && mediaPlayer == null) || sceneRenderer == null) {
+        if ((errorText == null && mediaImage == null ) || sceneRenderer == null) {
             // Wait for everything to be initialized.
             return;
         }
 
-        if (mediaImage != null) {
+            if (mediaImage != null) {
             // For images, acquire the displaySurface and draw the bitmap to it. Since our Mesh class uses
             // an GL_TEXTURE_EXTERNAL_OES texture, it's possible to perform this decoding and rendering of
             // a bitmap in the background without stalling the GL thread. If the Mesh used a standard
@@ -205,30 +194,13 @@ public class MediaLoader {
         }
     }
 
-    @MainThread
-    public synchronized void pause() {
-        if (mediaPlayer != null) {
-            mediaPlayer.pause();
-        }
-    }
 
-    @MainThread
-    public synchronized void resume() {
-        if (mediaPlayer != null) {
-            mediaPlayer.start();
-        }
-    }
 
     /**
      * Tears down MediaLoader and prevents further work from happening.
      */
     @MainThread
     public synchronized void destroy() {
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
         isDestroyed = true;
     }
 }
