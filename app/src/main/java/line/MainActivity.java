@@ -18,6 +18,7 @@ import line.flutter.MyFlutterActivity;
 import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
 //import line.panorama.GoogleVRActivity;
+import line.panorama.GoogleVRActivity;
 import line.panorama.OpenGLActivity;
 import line.scroller.ScrollViewActivity;
 import line.svg.SVGActivity;
@@ -96,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.google:
-//                intent.setClass(this, GoogleVRActivity.class);
-//                startActivity(intent);
+                intent.setClass(this, GoogleVRActivity.class);
+                startActivity(intent);
                 break;
             case R.id.google_video:
                 intent.setClass(this, VideoActivity.class);

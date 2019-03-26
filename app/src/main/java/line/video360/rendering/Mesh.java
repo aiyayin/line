@@ -19,8 +19,6 @@ package line.video360.rendering;
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 
-import com.google.vr.sdk.base.Eye;
-
 import java.nio.FloatBuffer;
 
 import static line.video360.rendering.Utils.checkGlError;
@@ -224,7 +222,7 @@ public final class Mesh {
    * Renders the mesh. This must be called on the GL thread.
    *
    * @param mvpMatrix The Model View Projection matrix.
-   * @param eyeType An {@link Eye.Type} value.
+   * @param eyeType An {} value.
    */
   /* package */ void glDraw(float[] mvpMatrix, int eyeType) {
     // Configure shader.
@@ -254,7 +252,7 @@ public final class Mesh {
 
     // Load texture data. Eye.Type.RIGHT uses the left eye's data.
     int textureOffset =
-        (eyeType == Eye.Type.RIGHT) ? POSITION_COORDS_PER_VERTEX + 2 : POSITION_COORDS_PER_VERTEX;
+        (eyeType == 2) ? POSITION_COORDS_PER_VERTEX + 2 : POSITION_COORDS_PER_VERTEX;
     vertexBuffer.position(textureOffset);
     GLES20.glVertexAttribPointer(
         texCoordsHandle,

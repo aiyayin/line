@@ -25,7 +25,6 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.AttributeSet;
-import com.google.vr.sdk.base.Eye.Type;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import androidx.annotation.AnyThread;
@@ -208,7 +207,7 @@ public final class MonoscopicView extends GLSurfaceView {
       }
 
       Matrix.multiplyMM(viewProjectionMatrix, 0, projectionMatrix, 0, viewMatrix, 0);
-      scene.glDrawFrame(viewProjectionMatrix, Type.MONOCULAR);
+      scene.glDrawFrame(viewProjectionMatrix, 0);
     }
 
     /** Adjusts the GL camera's rotation based on device rotation. Runs on the sensor thread. */
