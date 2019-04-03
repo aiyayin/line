@@ -17,7 +17,7 @@
     <style name="Txt_Main" parent="Txt_S17_C2">
         <!-- Customize your theme here. -->
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_height">45dp</item>
         <item name="android:gravity">center</item>
     </style>
 </resources>

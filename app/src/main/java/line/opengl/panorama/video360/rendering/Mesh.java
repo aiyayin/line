@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package line.video360.rendering;
+package line.opengl.panorama.video360.rendering;
 
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 
 import java.nio.FloatBuffer;
 
-import static line.video360.rendering.Utils.checkGlError;
+import static line.opengl.panorama.video360.rendering.Utils.checkGlError;
 
 /**
  * Utility class to generate & render spherical meshes for video or images. Use the static creation

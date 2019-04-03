@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.OverScroller;
 
 /**
- * 悬停
  * Created by ying.fu on 2018/6/7.
  */
 
@@ -83,16 +82,10 @@ public class HoverLinearLayout extends ViewGroup {
                 mLastY = event.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
-//                Log.e("ying>>>", " ACTION_MOVE event.getRawY(): " + event.getRawY());
-//                Log.e("ying>>>", "ACTION_MOVE event.getY(): " + event.getY());
-//                Log.e("ying>>>", "ACTION_MOVE mTouchSlop: " + mTouchSlop);
                 if (Math.abs(event.getY() - mLastY) > mTouchSlop) {
                     scrollBy(0, -(int) (event.getY() - mLastY));
                     mLastY = event.getY();
                 }
-
-//                mOverScroller.startScroll((int) event.getX(), (int) event.getY(),0, (int) (event.getY()-mLastY));
-//                mOverScroller.fling((int) event.getX(), (int) event.getY(), 0, 20, 0, 300, 0, 900);
                 break;
             case MotionEvent.ACTION_UP:
                 mVelocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);

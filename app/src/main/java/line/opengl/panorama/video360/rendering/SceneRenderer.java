@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package line.video360.rendering;
+package line.opengl.panorama.video360.rendering;
 
 import android.graphics.SurfaceTexture;
 import android.graphics.SurfaceTexture.OnFrameAvailableListener;
@@ -25,7 +25,7 @@ import android.view.Surface;
 import java.util.concurrent.atomic.AtomicBoolean;
 import androidx.annotation.AnyThread;
 import androidx.annotation.Nullable;
-import static line.video360.rendering.Utils.checkGlError;
+import static line.opengl.panorama.video360.rendering.Utils.checkGlError;
 
 /**
  * Controls and renders the GL Scene.

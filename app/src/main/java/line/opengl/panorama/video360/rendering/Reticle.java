@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package line.video360.rendering;
+package line.opengl.panorama.video360.rendering;
 
 import android.opengl.GLES20;
 import android.opengl.Matrix;
@@ -22,8 +22,6 @@ import android.opengl.Matrix;
 
 
 import java.nio.FloatBuffer;
-
-import static line.video360.rendering.Utils.checkGlError;
 
 
 /**
@@ -98,7 +96,7 @@ final class Reticle {
     program = Utils.compileProgram(vertexShaderCode, fragmentShaderCode);
     mvpMatrixHandle = GLES20.glGetUniformLocation(program, "uMvpMatrix");
     positionHandle = GLES20.glGetAttribLocation(program, "aPosition");
-    checkGlError();
+    Utils.checkGlError();
   }
 
   /**
@@ -109,15 +107,15 @@ final class Reticle {
   public void glDraw(float[] viewProjectionMatrix, float[] orientation) {
     // Configure shader.
     GLES20.glUseProgram(program);
-    checkGlError();
+    Utils.checkGlError();
 
     Matrix.multiplyMM(modelViewProjectionMatrix, 0, viewProjectionMatrix, 0, orientation, 0);
     GLES20.glUniformMatrix4fv(mvpMatrixHandle, 1, false, modelViewProjectionMatrix, 0);
-    checkGlError();
+    Utils.checkGlError();
 
     // Render quad.
     GLES20.glEnableVertexAttribArray(positionHandle);
-    checkGlError();
+    Utils.checkGlError();
 
     vertexBuffer.position(0);
     GLES20.glVertexAttribPointer(
@@ -127,10 +125,10 @@ final class Reticle {
         false,
         0,
         vertexBuffer);
-    checkGlError();
+    Utils.checkGlError();
 
     GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, 0, vertexData.length / COORDS_PER_VERTEX);
-    checkGlError();
+    Utils.checkGlError();
 
     GLES20.glDisableVertexAttribArray(positionHandle);
   }

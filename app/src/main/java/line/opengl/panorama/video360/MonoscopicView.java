@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package line.video360;
+package line.opengl.panorama.video360;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -30,7 +30,7 @@ import javax.microedition.khronos.opengles.GL10;
 import androidx.annotation.AnyThread;
 import androidx.annotation.BinderThread;
 import androidx.annotation.UiThread;
-import line.video360.rendering.SceneRenderer;
+import line.opengl.panorama.video360.rendering.SceneRenderer;
 
 /**
  * Renders a GL scene in a non-VR Activity that is affected by phone orientation and touch input.

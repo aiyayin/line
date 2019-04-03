@@ -1,4 +1,4 @@
-package line.panorama;
+package line.opengl.panorama;
 
 import android.annotation.TargetApi;
 import android.graphics.BitmapFactory;

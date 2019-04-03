@@ -1,4 +1,4 @@
-package line.video360;
+package line.opengl.panorama.video360;
 
 import android.app.Activity;
 import android.os.Bundle;

@@ -13,16 +13,16 @@ import com.example.yingfu.line.R;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+//import GoogleVRActivity;
 import line.bezier.BezierActivity;
 import line.flutter.MyFlutterActivity;
 import line.javafoundation.tree.TreeActivity;
 import line.line.IndexLineActivity;
-//import line.panorama.GoogleVRActivity;
-import line.panorama.GoogleVRActivity;
-import line.panorama.OpenGLActivity;
+import line.opengl.panorama.GoogleVRActivity;
+import line.opengl.panorama.OpenGLActivity;
+import line.opengl.panorama.video360.VideoActivity;
 import line.scroller.ScrollViewActivity;
 import line.svg.SVGActivity;
-import line.video360.VideoActivity;
 import line.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     READ_EXTERNAL_STORAGE_PERMISSION_ID);
         }
-//        findViewById(R.id.line).setOnClickListener(this);
-//        findViewById(R.id.HoverLinearLayout).setOnClickListener(this);
-//        findViewById(R.id.Bezier).setOnClickListener(this);
-//        findViewById(R.id.tree).setOnClickListener(this);
-//        findViewById(R.id.SVG).setOnClickListener(this);
-//        findViewById(R.id.viewpager).setOnClickListener(this);
-//        findViewById(R.id.flutter).setOnClickListener(this);
+        findViewById(R.id.line).setOnClickListener(this);
+        findViewById(R.id.HoverLinearLayout).setOnClickListener(this);
+        findViewById(R.id.Bezier).setOnClickListener(this);
+        findViewById(R.id.tree).setOnClickListener(this);
+        findViewById(R.id.SVG).setOnClickListener(this);
+        findViewById(R.id.viewpager).setOnClickListener(this);
+        findViewById(R.id.flutter).setOnClickListener(this);
         findViewById(R.id.open_gl).setOnClickListener(this);
         findViewById(R.id.google).setOnClickListener(this);
         findViewById(R.id.google_video).setOnClickListener(this);
@@ -64,34 +64,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent intent = new Intent();
         switch (v.getId()) {
-//            case R.id.line:
-//                intent.setClass(this, IndexLineActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.HoverLinearLayout:
-//                intent.setClass(this, ScrollViewActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.Bezier:
-//                intent.setClass(this, BezierActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.tree:
-//                intent.setClass(this, TreeActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.SVG:
-//                intent.setClass(this, SVGActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.viewpager:
-//                intent.setClass(this, ViewPagerActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.flutter:
-//                intent.setClass(this, MyFlutterActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.line:
+                intent.setClass(this, IndexLineActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.HoverLinearLayout:
+                intent.setClass(this, ScrollViewActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.Bezier:
+                intent.setClass(this, BezierActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tree:
+                intent.setClass(this, TreeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.SVG:
+                intent.setClass(this, SVGActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.viewpager:
+                intent.setClass(this, ViewPagerActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.flutter:
+                intent.setClass(this, MyFlutterActivity.class);
+                startActivity(intent);
+                break;
             case R.id.open_gl:
                 intent.setClass(this, OpenGLActivity.class);
                 startActivity(intent);

@@ -1,4 +1,4 @@
-package line.panorama;
+package line.opengl.panorama;
 
 import android.os.Bundle;
 

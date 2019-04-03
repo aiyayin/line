@@ -1,58 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="#fff"
-              android:gravity="center_horizontal"
-              android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <!--<TextView-->
-        <!--android:id="@+id/line"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="line"/>-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="#fff"
+                  android:gravity="center_horizontal"
+                  android:orientation="vertical">
 
-    <!--<TextView-->
-        <!--android:id="@+id/HoverLinearLayout"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="HoverLinearLayout"/>-->
+        <TextView
+            android:id="@+id/line"
+            style="@style/Txt_Main"
+            android:text="line"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/Bezier"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="Bezier"/>-->
+        <TextView
+            android:id="@+id/HoverLinearLayout"
+            style="@style/Txt_Main"
+            android:text="HoverLinearLayout"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/tree"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="tree"/>-->
+        <TextView
+            android:id="@+id/Bezier"
+            style="@style/Txt_Main"
+            android:text="Bezier"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/SVG"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="SVG"/>-->
+        <TextView
+            android:id="@+id/tree"
+            style="@style/Txt_Main"
+            android:text="tree"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/viewpager"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="ViewPager"/>-->
+        <TextView
+            android:id="@+id/SVG"
+            style="@style/Txt_Main"
+            android:text="SVG"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/flutter"-->
-        <!--style="@style/Txt_Main"-->
-        <!--android:text="flutter"/>-->
+        <TextView
+            android:id="@+id/viewpager"
+            style="@style/Txt_Main"
+            android:text="ViewPager"/>
 
-    <TextView
-        android:id="@+id/open_gl"
-        style="@style/Txt_Main"
-        android:text="OpenGl"/>
+        <TextView
+            android:id="@+id/flutter"
+            style="@style/Txt_Main"
+            android:text="flutter"/>
 
-    <TextView
-        android:id="@+id/google"
-        style="@style/Txt_Main"
-        android:text="GoogleVr"/>
-    <TextView
-        android:id="@+id/google_video"
-        style="@style/Txt_Main"
-        android:text="GoogleVideo"/>
+        <TextView
+            android:id="@+id/open_gl"
+            style="@style/Txt_Main"
+            android:text="OpenGl"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/google"
+            style="@style/Txt_Main"
+            android:text="GoogleVr"/>
+
+        <TextView
+            android:id="@+id/google_video"
+            style="@style/Txt_Main"
+            android:text="GoogleVideo"/>
+
+    </LinearLayout>
+</ScrollView>

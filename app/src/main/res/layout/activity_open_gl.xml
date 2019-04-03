@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="line.panorama.OpenGLActivity">
+    tools:context="line.opengl.panorama.OpenGLActivity">
 
 
-    <line.panorama.GLPanorama
+    <line.opengl.panorama.GLPanorama
         android:id="@+id/mGLPanorama"
         android:layout_width="300dp"
         android:layout_height="300dp">
 
-    </line.panorama.GLPanorama>
+    </line.opengl.panorama.GLPanorama>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

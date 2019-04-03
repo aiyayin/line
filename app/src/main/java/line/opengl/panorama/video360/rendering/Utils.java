@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package line.video360.rendering;
+package line.opengl.panorama.video360.rendering;
 
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;

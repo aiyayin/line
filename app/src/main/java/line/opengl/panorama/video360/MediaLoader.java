@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package line.video360;
+package line.opengl.panorama.video360;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -26,8 +26,8 @@ import android.view.Surface;
 import com.example.yingfu.line.R;
 import androidx.annotation.AnyThread;
 import androidx.annotation.MainThread;
-import line.video360.rendering.Mesh;
-import line.video360.rendering.SceneRenderer;
+import line.opengl.panorama.video360.rendering.Mesh;
+import line.opengl.panorama.video360.rendering.SceneRenderer;
 
 public class MediaLoader {
     private static final String TAG = "MediaLoader";

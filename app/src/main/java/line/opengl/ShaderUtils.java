@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import static line.panorama.OGLUtils.checkGlError;
+import static line.opengl.panorama.OGLUtils.checkGlError;
 
 /**
  * Created by ying.fu.
