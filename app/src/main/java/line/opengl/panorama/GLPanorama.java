@@ -1,5 +1,7 @@
 package line.opengl.panorama;
 
+import android.animation.Animator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,6 +10,7 @@ import android.hardware.SensorManager;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -159,7 +162,38 @@ public class GLPanorama extends RelativeLayout implements SensorEventListener {
         this.mGlSurfaceView.setEGLContextClientVersion(2);
         this.mBall = new Ball(this.mContext, pimgid);
         this.mGlSurfaceView.setRenderer(this.mBall);
-        this.initSensor();
+        setInitBallAngle();
+//        this.initSensor();
+    }
+
+    private void setInitBallAngle() {
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0.0F, 360.0F);
+        valueAnimator.addUpdateListener(animation -> {
+            Log.e("ying>>", "onAnimationUpdate: " + animation.getAnimatedValue());
+            mBall.yAngle = (float) animation.getAnimatedValue();
+//                mBall.yAngle = (float) animation.getAnimatedValue();
+        });
+        valueAnimator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                initSensor();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        valueAnimator.setDuration(3000);
+        valueAnimator.start();
     }
 
     private void rotate() {

@@ -16,6 +16,8 @@
 
 package line.opengl.panorama.video360;
 
+import android.animation.Animator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -25,6 +27,8 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.AttributeSet;
+import android.util.Log;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import androidx.annotation.AnyThread;
@@ -50,6 +54,7 @@ public final class MonoscopicView extends GLSurfaceView {
 
   private MediaLoader mediaLoader;
   private Renderer renderer;
+  private boolean isCreate;
 
   /** Inflates a standard GLSurfaceView. */
   public MonoscopicView(Context context, AttributeSet attributeSet) {
@@ -61,6 +66,7 @@ public final class MonoscopicView extends GLSurfaceView {
    * Finishes initialization. This should be called immediately after the View is inflated.
    */
   public void initialize() {
+    Log.e("ying>>", "initialize: ");
     mediaLoader = new MediaLoader(getContext());
 
     // Configure OpenGL.
@@ -79,7 +85,39 @@ public final class MonoscopicView extends GLSurfaceView {
       orientationSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
     }
     phoneOrientationListener = new PhoneOrientationListener();
+    isCreate = true;
+    setInitBallAngle();
+  }
+  private void setInitBallAngle() {
+    Log.e("ying>>", "setInitBallAngle: ");
+    ValueAnimator valueAnimator = ValueAnimator.ofFloat(0.0F, 360.0F);
+    valueAnimator.addUpdateListener(animation -> {
+      Log.e("ying>>", "onAnimationUpdate: " + animation.getAnimatedValue());
+      renderer.updateYMatrix((float) animation.getAnimatedValue());
+//                mBall.yAngle = (float) animation.getAnimatedValue();
+    });
+    valueAnimator.addListener(new Animator.AnimatorListener() {
+      @Override
+      public void onAnimationStart(Animator animation) {
+      }
 
+      @Override
+      public void onAnimationEnd(Animator animation) {
+        isCreate = false;
+        onResume();
+      }
+
+      @Override
+      public void onAnimationCancel(Animator animation) {
+      }
+
+      @Override
+      public void onAnimationRepeat(Animator animation) {
+
+      }
+    });
+    valueAnimator.setDuration(3000);
+    valueAnimator.start();
   }
 
   /** Starts the sensor & video only when this View is active. */
@@ -87,8 +125,10 @@ public final class MonoscopicView extends GLSurfaceView {
   public void onResume() {
     super.onResume();
     // Use the fastest sensor readings.
-    sensorManager.registerListener(
-        phoneOrientationListener, orientationSensor, SensorManager.SENSOR_DELAY_FASTEST);
+    if(!isCreate) {
+      sensorManager.registerListener(
+              phoneOrientationListener, orientationSensor, SensorManager.SENSOR_DELAY_FASTEST);
+    }
   }
 
   /** Stops the sensors & video when the View is inactive to avoid wasting battery. */
@@ -237,6 +277,16 @@ public final class MonoscopicView extends GLSurfaceView {
       touchPitch = pitchDegrees;
       updatePitchMatrix();
     }
+
+    @AnyThread
+    private void updateYMatrix(float pitchDegrees) {
+        touchPitch = pitchDegrees;
+      // The camera's pitch needs to be rotated along an axis that is parallel to the real world's
+      // horizon. This is the <1, 0, 0> axis after compensating for the device's roll.
+      Matrix.setRotateM(touchPitchMatrix, 0,
+          -touchPitch, 0, 1, 0);
+    }
+
 
     /** Set the yaw offset matrix. */
     @UiThread

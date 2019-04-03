@@ -2,6 +2,8 @@ package line.opengl.panorama.video360;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.example.yingfu.line.R;
 
 /**
@@ -28,8 +30,10 @@ public class VideoActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.video_activity);
     videoView = (MonoscopicView) findViewById(R.id.video_view);
+      Log.e("ying>>", "onCreate before initialize: ");
     videoView.initialize();
-    videoView.loadMedia();
+      Log.e("ying>>", "onCreate after initialize: ");
+      videoView.loadMedia();
 
   }
 
