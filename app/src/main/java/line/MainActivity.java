@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     READ_EXTERNAL_STORAGE_PERMISSION_ID);
         }
-        findViewById(R.id.line).setOnClickListener(this);
+        View line = findViewById(R.id.line);
+        line.setOnClickListener(this);
         findViewById(R.id.HoverLinearLayout).setOnClickListener(this);
         findViewById(R.id.Bezier).setOnClickListener(this);
         findViewById(R.id.tree).setOnClickListener(this);
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.open_gl).setOnClickListener(this);
         findViewById(R.id.google).setOnClickListener(this);
         findViewById(R.id.google_video).setOnClickListener(this);
+
 
         mDefault = getComponentName();
         mDouble11 = new ComponentName(getBaseContext(), "com.example.yingfu.line.redLine");

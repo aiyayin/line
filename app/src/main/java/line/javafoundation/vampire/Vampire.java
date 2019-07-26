@@ -59,14 +59,14 @@ public class Vampire {
     }
 
 
-    public void printVampire(int number, int k) {
-        for (int t = (int) (Math.pow(10, number - 1) + 1); t < (int) (Math.pow(10, number) - 1); t++) {
-            char[] chars = String.valueOf(t).toCharArray();
-            combine(chars, k, t);
+    public void printVampire(int numberLength, int divideLength) {
+        for (int number = (int) (Math.pow(10, numberLength - 1) + 1); number < (int) (Math.pow(10, numberLength) - 1); number++) {
+            char[] chars = String.valueOf(number).toCharArray();
+            combine(chars, divideLength, number);
         }
     }
 
-    private void combine(char[] data, int k, int t) {
+    private void combine(char[] data, int divideLength, int number) {
         ArrayList<String> resultdata = new ArrayList<>();
         combineN(data, resultdata, 0);
         for (String item :
@@ -75,12 +75,12 @@ public class Vampire {
             int ck = 0;
             int cend = 0;
             for (int i = 0; i < chars.length; i++) {
-                if (i < k)
-                    ck = (int) (ck + (chars[i] - '0') * Math.pow(10, k - i - 1));
+                if (i < divideLength)
+                    ck = (int) (ck + (chars[i] - '0') * Math.pow(10, divideLength - i - 1));
                 else
                     cend = (int) (cend + (chars[i] - '0') * Math.pow(10, chars.length - i - 1));
             }
-            printResult(ck, cend, t);
+            printResult(ck, cend, number);
 
         }
 

@@ -30,18 +30,18 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/index_line_bg"/>
 
-<android.support.design.widget.TabLayout
+<com.google.android.material.tabs.TabLayout
     android:id="@+id/tab_layout"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:background="@color/blue"
     android:scrollbars="none"/>
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/top_viewpager"
         android:layout_width="match_parent"
         android:layout_height="300dp">
-    </androidx.core.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 
     <line.line.IndexLineView
         android:id="@+id/top_line_two"

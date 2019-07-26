@@ -11,7 +11,7 @@
         android:background="#9fdcf1"
         android:clipChildren="false">
 
-        <androidx.core.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="160dp"
             android:layout_height="200dp"
@@ -19,7 +19,7 @@
             android:clipChildren="false"/>
     </line.viewpager.TFramelayout>
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager_2"
         android:layout_width="match_parent"
         android:layout_height="200dp"

@@ -11,7 +11,7 @@ public class Producer implements Runnable {
         for (int i = 0; i < 20; i++) {
             storage.produce(new Phone(i));
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
 //                每隔1000毫秒生产一个产品
             } catch (InterruptedException e) {
 //                TODO Auto -generated catch block e.printStackTrace();
