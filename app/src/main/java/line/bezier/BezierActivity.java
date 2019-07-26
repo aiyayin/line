@@ -1,11 +1,12 @@
 package line.bezier;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.yingfu.line.R;
 
-public class BezierActivity extends AppCompatActivity {
+import line.BaseActivity;
+
+public class BezierActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

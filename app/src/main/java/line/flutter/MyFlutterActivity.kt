@@ -8,11 +8,12 @@ import android.widget.FrameLayout
 import com.example.backstack.BackstackPlugin
 import com.example.yingfu.line.R
 import io.flutter.facade.Flutter
+import line.BaseActivity
 
 //import io.flutter.plugin.common.MethodChannel
 //import io.flutter.plugins.GeneratedPluginRegistrant
 
-class MyFlutterActivity : AppCompatActivity() {
+class MyFlutterActivity : BaseActivity() {
     //channel的名称，由于app中可能会有多个channel，这个名称需要在app内是唯一的。
     private val CHANNEL = "samples.flutter"
     val flutterView=null

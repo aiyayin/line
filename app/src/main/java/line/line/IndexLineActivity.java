@@ -24,9 +24,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import line.BaseActivity;
 import line.util.ToolUtil;
 
-public class IndexLineActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
+public class IndexLineActivity extends BaseActivity implements BlankFragment.OnFragmentInteractionListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

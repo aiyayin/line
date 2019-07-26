@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.example.yingfu.line.R;
 
 import androidx.appcompat.app.AppCompatActivity;
+import line.BaseActivity;
 
 
 /**
@@ -16,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
  *
  * 有问题欢迎随时来找我共同解决
  */
-public class OpenGLActivity extends AppCompatActivity {
+public class OpenGLActivity extends BaseActivity {
     private GLPanorama mGLPanorama;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

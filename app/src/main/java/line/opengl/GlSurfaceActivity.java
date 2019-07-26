@@ -7,8 +7,9 @@ import android.os.Bundle;
 import com.example.yingfu.line.R;
 
 import androidx.appcompat.app.AppCompatActivity;
+import line.BaseActivity;
 
-public class GlSurfaceActivity extends AppCompatActivity {
+public class GlSurfaceActivity extends BaseActivity {
     GLSurfaceView mSurfaceView;
 
     @Override

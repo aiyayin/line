@@ -8,10 +8,11 @@ import android.view.View;
 
 import com.example.yingfu.line.R;
 
+import line.BaseActivity;
 import line.javafoundation.file.file;
 import line.util.ToolUtil;
 
-public class TreeActivity extends AppCompatActivity implements View.OnClickListener {
+public class TreeActivity extends BaseActivity implements View.OnClickListener {
     private Tree mTree;
 
     @Override

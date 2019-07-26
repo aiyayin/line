@@ -12,8 +12,9 @@ import com.google.vr.sdk.widgets.pano.VrPanoramaEventListener;
 import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import line.BaseActivity;
 
-public class GoogleVRActivity extends AppCompatActivity {
+public class GoogleVRActivity extends BaseActivity {
     private static final String TAG = "ying>GoogleVRActivity:";
     private VrPanoramaView mVrPanoramaView;
     private VrPanoramaView.Options paNormalOptions;

@@ -14,13 +14,14 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
 import com.example.yingfu.line.R;
+
+import androidx.annotation.Nullable;
 
 /**
  * 波浪\(^o^)/~
@@ -62,13 +63,13 @@ public class WaveView extends View {
     public WaveView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.WaveView, defStyleAttr, 0);
-        indexColor = typedArray.getColor(R.styleable.WaveView_color, context.getResources().getColor(R.color.blue));
+        indexColor = typedArray.getColor(R.styleable.WaveView_color, context.getResources().getColor(R.color.main_color_avocado));
         typedArray.recycle();
         init();
         initAnimator();
     }
 
-    Bitmap bitmapWhite, bitmap;
+    Bitmap bitmap;
     Matrix matrix;
     Shader bitmapShader;
 
@@ -77,10 +78,9 @@ public class WaveView extends View {
         mWaveLimitPath = new Path();
         mPaint = new Paint();
         mPaint.setColor(indexColor);
-        bitmapWhite = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ya_white);
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_ya);
         matrix = new Matrix();
-        bitmapShader = new BitmapShader(bitmapWhite, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         Shader colorShader = new LinearGradient(0, 0, mScreenWidth, mScreenHeight, indexColor, indexColor, Shader.TileMode.REPEAT);
         ComposeShader composeShader = new ComposeShader(colorShader, bitmapShader, PorterDuff.Mode.SRC_ATOP);
         mPaint.setShader(composeShader);
@@ -93,8 +93,8 @@ public class WaveView extends View {
         mScreenHeight = h;
         mScreenWidth = w;
         mWaveCount = mScreenWidth / mWaveW + 3;
-        mBitmapLeft = mScreenWidth / 2 - bitmapWhite.getWidth()/2;
-        mBitmapTop = mScreenHeight / 2 - bitmapWhite.getHeight()/2;
+        mBitmapLeft = mScreenWidth / 2 - bitmap.getWidth() / 2;
+        mBitmapTop = mScreenHeight / 2 - bitmap.getHeight() / 2;
         Log.e("ying>>>", "onSizeChanged: " + mWaveCount);
         mCenterY = mScreenHeight / 2;
     }
@@ -107,7 +107,6 @@ public class WaveView extends View {
         matrix.setTranslate(mBitmapLeft, mBitmapTop);
         bitmapShader.setLocalMatrix(matrix);
         canvas.drawBitmap(bitmap, mBitmapLeft, mBitmapTop, mPaint);
-//        canvas.drawBitmap(bitmap, 0, 0, mPaint1);
         mPath.moveTo(0, mCenterY + offset);
         for (int i = 0; i < mWaveCount; i++) {
 //        quadTo方法中的四个参数分别是确定第二，第三的点的。第一个点就是path上次操作的点。

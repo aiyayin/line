@@ -15,8 +15,8 @@ import com.example.yingfu.line.R;
  * The default intent for this Activity will load a 360 placeholder panorama. For more options on
  * how to load other media using a custom Intent, see {@link MediaLoader}.
  */
-public class VideoActivity extends Activity {
-  private static final String TAG = "VideoActivity";
+public class GoogleVideoActivity extends Activity {
+  private static final String TAG = "GoogleVideoActivity";
   private MonoscopicView videoView;
 
   /**

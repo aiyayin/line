@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.AppCompat.Light"
         tools:replace="android:label">
         <activity android:name="line.MainActivity">
             <intent-filter>
@@ -29,7 +29,7 @@
         </activity>
         <activity android:name="line.flutter.MyFlutterActivity"/>
         <activity android:name="line.opengl.panorama.OpenGLActivity"/>
-        <activity android:name="line.opengl.panorama.video360.VideoActivity"/>
+        <activity android:name="line.opengl.panorama.video360.GoogleVideoActivity"/>
         <activity android:name="line.opengl.panorama.GoogleVRActivity">
         </activity>
     </application>
