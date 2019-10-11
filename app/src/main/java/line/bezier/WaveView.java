@@ -63,7 +63,7 @@ public class WaveView extends View {
     public WaveView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.WaveView, defStyleAttr, 0);
-        indexColor = typedArray.getColor(R.styleable.WaveView_color, context.getResources().getColor(R.color.main_color_avocado));
+        indexColor = typedArray.getColor(R.styleable.WaveView_color, context.getResources().getColor(R.color.blue_2196f3));
         typedArray.recycle();
         init();
         initAnimator();
