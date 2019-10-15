@@ -1,4 +1,4 @@
-package line.viewpager;
+package line.view.viewpager;
 
 import android.content.Context;
 import androidx.annotation.NonNull;

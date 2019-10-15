@@ -7,7 +7,7 @@
               android:orientation="vertical">
 
 
-    <line.line.ObservableScrollView
+    <line.view.line.ObservableScrollView
         android:id="@+id/top_scrollview"
         android:layout_width="match_parent"
         android:layout_height="128dp"
@@ -18,9 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"/>
-    </line.line.ObservableScrollView>
+    </line.view.line.ObservableScrollView>
 
-    <line.line.IndexLineView
+    <line.view.line.IndexLineView
         android:id="@+id/top_line"
         android:layout_width="24dp"
         android:layout_height="4dp"
@@ -43,7 +43,7 @@
         android:layout_height="300dp">
     </androidx.viewpager.widget.ViewPager>
 
-    <line.line.IndexLineView
+    <line.view.line.IndexLineView
         android:id="@+id/top_line_two"
         android:layout_width="match_parent"
         android:layout_height="4dp"

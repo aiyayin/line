@@ -1,4 +1,4 @@
-package line.line;
+package line.view.line;
 
 import com.example.yingfu.line.R;
 

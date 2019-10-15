@@ -1,4 +1,4 @@
-package line.line;
+package line.view.line;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -1,4 +1,4 @@
-package line.bezier;
+package line.view.bezier;
 
 import android.animation.ValueAnimator;
 import android.content.Context;

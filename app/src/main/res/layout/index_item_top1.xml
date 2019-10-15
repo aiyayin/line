@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<line.scroller.MyNestedScrollParent
+<line.view.scroller.MyNestedScrollParent
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +20,7 @@
         android:gravity="center"
         android:text="2：其实我是要悬停的"/>
 
-<line.scroller.HoverLinearLayout2
+<line.view.scroller.HoverLinearLayout2
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -94,5 +94,5 @@
             android:background="#d2e491"
             android:gravity="center"
             android:text="12"/>
-    </line.scroller.HoverLinearLayout2>
-</line.scroller.MyNestedScrollParent>
+    </line.view.scroller.HoverLinearLayout2>
+</line.view.scroller.MyNestedScrollParent>

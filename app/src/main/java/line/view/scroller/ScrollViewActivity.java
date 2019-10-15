@@ -1,4 +1,4 @@
-package line.scroller;
+package line.view.scroller;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;

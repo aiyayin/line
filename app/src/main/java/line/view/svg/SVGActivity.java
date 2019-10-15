@@ -1,4 +1,4 @@
-package line.svg;
+package line.view.svg;
 
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;

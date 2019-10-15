@@ -1,4 +1,4 @@
-package line.scroller;
+package line.view.scroller;
 
 import android.content.Context;
 import androidx.annotation.Nullable;

@@ -19,13 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="line.line.IndexLineActivity">
+        <activity android:name="line.view.line.IndexLineActivity">
         </activity>
-        <activity android:name="line.scroller.ScrollViewActivity"/>
-        <activity android:name="line.bezier.BezierActivity"/>
+        <activity android:name="line.view.scroller.ScrollViewActivity"/>
+        <activity android:name="line.view.bezier.BezierActivity"/>
         <activity android:name="line.javafoundation.tree.TreeActivity"/>
-        <activity android:name="line.svg.SVGActivity"/>
-        <activity android:name="line.viewpager.ViewPagerActivity">
+        <activity android:name="line.view.svg.SVGActivity"/>
+        <activity android:name="line.view.viewpager.ViewPagerActivity">
         </activity>
         <activity android:name="line.flutter.MyFlutterActivity"/>
         <activity android:name="line.opengl.panorama.OpenGLActivity"/>

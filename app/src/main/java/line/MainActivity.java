@@ -22,17 +22,17 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import line.bezier.BezierActivity;
+import line.view.bezier.BezierActivity;
 import line.entity.ActivityItem;
 import line.flutter.MyFlutterActivity;
 import line.javafoundation.tree.TreeActivity;
-import line.line.IndexLineActivity;
+import line.view.line.IndexLineActivity;
 import line.opengl.panorama.GoogleVRActivity;
 import line.opengl.panorama.OpenGLActivity;
 import line.opengl.panorama.video360.GoogleVideoActivity;
-import line.scroller.ScrollViewActivity;
-import line.svg.SVGActivity;
-import line.viewpager.ViewPagerActivity;
+import line.view.scroller.ScrollViewActivity;
+import line.view.svg.SVGActivity;
+import line.view.viewpager.ViewPagerActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private static final int READ_EXTERNAL_STORAGE_PERMISSION_ID = 1;
