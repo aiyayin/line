@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         tools:replace="android:label">
-        <activity android:name="line.view.bookpager.BookPageActivity"/>
+        <activity android:name="line.view.anim.AnimActivity"></activity>
+        <activity android:name="line.view.bookpager.BookPageActivity" />
         <activity android:name="line.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

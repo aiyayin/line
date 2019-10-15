@@ -22,6 +22,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import line.view.anim.AnimActivity;
 import line.view.bezier.BezierActivity;
 import line.entity.ActivityItem;
 import line.flutter.MyFlutterActivity;
@@ -68,6 +69,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         activityItems.add(new ActivityItem("GoogleVR", R.drawable.ic_vr, GoogleVRActivity.class));
         activityItems.add(new ActivityItem("GoogleVideo", R.drawable.ic_vr, GoogleVideoActivity.class));
         activityItems.add(new ActivityItem("BookPage", R.drawable.ic_book, BookPageActivity.class));
+        activityItems.add(new ActivityItem("Animation", R.drawable.ic_wave, AnimActivity.class));
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
