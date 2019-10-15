@@ -14,7 +14,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         ndk {
-            abiFilters 'x86', 'armeabi-v7a','x86_64'
+            abiFilters 'x86', 'armeabi-v7a', 'x86_64'
         }
     }
 
@@ -43,6 +43,7 @@ dependencies {
 //    implementation 'com.google.vr:sdk-base:1.190.0'
     implementation project(path: ':flutter')
     implementation project(path: ':backstack')
+    implementation project(path: ':BookPage')
 
 
 }

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.example.yingfu.line">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.yingfu.line">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:name="line.LineApplication"
         android:icon="@mipmap/ic_launcher"
@@ -11,27 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         tools:replace="android:label">
+        <activity android:name="line.view.bookpager.BookPageActivity"/>
         <activity android:name="line.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="line.view.line.IndexLineActivity">
-        </activity>
-        <activity android:name="line.view.scroller.ScrollViewActivity"/>
-        <activity android:name="line.view.bezier.BezierActivity"/>
-        <activity android:name="line.javafoundation.tree.TreeActivity"/>
-        <activity android:name="line.view.svg.SVGActivity"/>
-        <activity android:name="line.view.viewpager.ViewPagerActivity">
-        </activity>
-        <activity android:name="line.flutter.MyFlutterActivity"/>
-        <activity android:name="line.opengl.panorama.OpenGLActivity"/>
-        <activity android:name="line.opengl.panorama.video360.GoogleVideoActivity"/>
-        <activity android:name="line.opengl.panorama.GoogleVRActivity">
-        </activity>
+        <activity android:name="line.view.line.IndexLineActivity" />
+        <activity android:name="line.view.scroller.ScrollViewActivity" />
+        <activity android:name="line.view.bezier.BezierActivity" />
+        <activity android:name="line.javafoundation.tree.TreeActivity" />
+        <activity android:name="line.view.svg.SVGActivity" />
+        <activity android:name="line.view.viewpager.ViewPagerActivity" />
+        <activity android:name="line.flutter.MyFlutterActivity" />
+        <activity android:name="line.opengl.panorama.OpenGLActivity" />
+        <activity android:name="line.opengl.panorama.video360.GoogleVideoActivity" />
+        <activity android:name="line.opengl.panorama.GoogleVRActivity" />
     </application>
-    <uses-sdk tools:overrideLibrary="com.google.vr.widgets.pano,com.google.vr.widgets.common,com.google.vr.sdk.widgets.pano,com.google.vr.cardboard"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-sdk tools:overrideLibrary="com.google.vr.widgets.pano,com.google.vr.widgets.common,com.google.vr.sdk.widgets.pano,com.google.vr.cardboard" />
+
 </manifest>

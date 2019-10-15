@@ -1,5 +1,5 @@
 // MyApp/settings.gradle
-include ':app'                                     // assumed existing content
+include ':app', ':BookPage'                                     // assumed existing content
 setBinding(new Binding([gradle: this]))
 evaluate(new File(
         settingsDir.parentFile,

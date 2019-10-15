@@ -26,6 +26,7 @@ import line.view.bezier.BezierActivity;
 import line.entity.ActivityItem;
 import line.flutter.MyFlutterActivity;
 import line.javafoundation.tree.TreeActivity;
+import line.view.bookpager.BookPageActivity;
 import line.view.line.IndexLineActivity;
 import line.opengl.panorama.GoogleVRActivity;
 import line.opengl.panorama.OpenGLActivity;
@@ -66,6 +67,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         activityItems.add(new ActivityItem("OpenGL", R.drawable.ic_vr, OpenGLActivity.class));
         activityItems.add(new ActivityItem("GoogleVR", R.drawable.ic_vr, GoogleVRActivity.class));
         activityItems.add(new ActivityItem("GoogleVideo", R.drawable.ic_vr, GoogleVideoActivity.class));
+        activityItems.add(new ActivityItem("BookPage", R.drawable.ic_book, BookPageActivity.class));
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
