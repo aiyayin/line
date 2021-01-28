@@ -13,16 +13,16 @@ import android.widget.LinearLayout;
  * 触摸事件分发给 viewpager
  */
 
-public class TFramelayout extends LinearLayout {
-    public TFramelayout(@NonNull Context context) {
+public class TFrameLayout extends LinearLayout {
+    public TFrameLayout(@NonNull Context context) {
         super(context);
     }
 
-    public TFramelayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public TFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public TFramelayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

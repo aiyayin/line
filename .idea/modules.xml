@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BookPage/BookPage.iml" filepath="$PROJECT_DIR$/BookPage/BookPage.iml" group="line/BookPage" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="line/app" />
-      <module fileurl="file://$PROJECT_DIR$/backstack/android/backstack.iml" filepath="$PROJECT_DIR$/backstack/android/backstack.iml" group="line/backstack" />
-      <module fileurl="file://$PROJECT_DIR$/my_flutter/.android/Flutter/flutter.iml" filepath="$PROJECT_DIR$/my_flutter/.android/Flutter/flutter.iml" group="line/flutter" />
-      <module fileurl="file://$PROJECT_DIR$/line.iml" filepath="$PROJECT_DIR$/line.iml" group="line" />
+      <module fileurl="file://$PROJECT_DIR$/line.iml" filepath="$PROJECT_DIR$/line.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BookPage/line.BookPage.iml" filepath="$PROJECT_DIR$/.idea/modules/BookPage/line.BookPage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/line.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/line.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backstack/android/line.backstack.iml" filepath="$PROJECT_DIR$/.idea/modules/backstack/android/line.backstack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/my_flutter/.android/Flutter/line.flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/my_flutter/.android/Flutter/line.flutter.iml" />
     </modules>
   </component>
 </project>

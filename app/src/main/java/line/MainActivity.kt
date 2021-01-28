@@ -102,23 +102,19 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, results: IntArray) {
         if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_ID) {
-            if (results.size > 0 && results[0] == PackageManager.PERMISSION_GRANTED) {
+            if (results.isNotEmpty() && results[0] == PackageManager.PERMISSION_GRANTED) {
             }
         }
     }
 
     inner class ActivityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvTitle: TextView
-        var ivIcon: ImageView
+        var tvTitle: TextView = itemView.findViewById(R.id.title)
+        var ivIcon: ImageView = itemView.findViewById(R.id.icon)
 
-        init {
-            tvTitle = itemView.findViewById(R.id.title)
-            ivIcon = itemView.findViewById(R.id.icon)
-        }
     }
 
     companion object {
-        private val READ_EXTERNAL_STORAGE_PERMISSION_ID = 1
+        private const val READ_EXTERNAL_STORAGE_PERMISSION_ID = 1
     }
 
 
