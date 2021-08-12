@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
@@ -34,21 +34,20 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0-beta01'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.android.material:material:1.2.0-alpha02'
+    implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-//    implementation 'com.google.vr:sdk-panowidget:1.180.0'
-    implementation 'androidx.dynamicanimation:dynamicanimation:1.1.0-alpha02'
-//    implementation 'com.google.vr:sdk-base:1.190.0'
-    implementation project(path: ':flutter')
-    implementation project(path: ':backstack')
-    implementation project(path: ':BookPage')
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.1.0-alpha03'
     implementation "android.arch.navigation:navigation-fragment:$nav_version"
     implementation "android.arch.navigation:navigation-ui:$nav_version"
-
-
+    implementation "android.arch.lifecycle:extensions:$kotlin_version"
+//    implementation "android.arch.lifecycle:extensions-ktx:$kotlin_version"
+    implementation "android.arch.lifecycle:viewmodel:$kotlin_version"
+//    implementation "android.arch.lifecycle:viewmodel-ktx:2.1.0"
+    implementation "android.arch.lifecycle:livedata:$kotlin_version"
+//    implementation "android.arch.lifecycle:livedata-ktx:2.1.0"
 }
 repositories {
     mavenCentral()

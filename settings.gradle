@@ -1,7 +1,2 @@
 // MyApp/settings.gradle
-include ':app', ':BookPage'                                     // assumed existing content
-setBinding(new Binding([gradle: this]))
-evaluate(new File(
-        settingsDir.parentFile,
-        '..\\gitproject\\line\\my_flutter\\.android\\include_flutter.groovy'
-))
+include ':app'

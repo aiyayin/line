@@ -3,14 +3,13 @@ package line.javafoundation;
 import android.util.Log;
 
 public class Synchronized {
-    private static Object lock = new Object();
-    private static Object lockb = new Object();
-    public static class ClassA {
 
+    public static class ClassA {
+        private  Object lock = new Object();
+        private  Object lockb = new Object();
         public  void methodA() {
             try {
                 synchronized (lock) {
-//                System.out.println("yin>" + "methodA 1111 " + Thread.currentThread().getName() + " at time " + System.currentTimeMillis());
                     System.out.println("yin>" + "methodA start " + Thread.currentThread().getName() + " at time " + System.currentTimeMillis());
                     Thread.sleep(5000);
                     System.out.println("yin>" + "methodA end " + Thread.currentThread().getName() + " at time " + System.currentTimeMillis());
@@ -23,7 +22,6 @@ public class Synchronized {
         public  void methodB() {
             try {
                 synchronized (lockb) {
-//            System.out.println("yin>" + "methodB  " + Thread.currentThread().getName() + " at time " + System.currentTimeMillis());
                     System.out.println("yin>" + "methodB start " + Thread.currentThread().getName() + " at time " + System.currentTimeMillis());
                     Thread.sleep(5000);
                     System.out.println("yin>" + "methodB end " + Thread.currentThread().getName() + " at time " + System.currentTimeMillis());
@@ -47,7 +45,6 @@ public class Synchronized {
             @Override
             public void run() {
                 A.methodB();
-                A.methodA();
             }
         });
 
