@@ -1,8 +1,11 @@
 package line
 
 import androidx.lifecycle.ViewModel
+import line.html.ArticleActivity
 import com.example.yingfu.line.R
 import line.entity.ActivityItem
+import line.html.ArticleRecyclerActivity
+import line.html.ArticleWebActivity
 import line.javafoundation.tree.TreeActivity
 import line.opengl.panorama.OpenGLActivity
 import line.opengl.panorama.video360.GoogleVideoActivity
@@ -21,7 +24,7 @@ import line.view.viewpager.ViewPagerActivity
  * @tapd
  */
 class MainViewModel : ViewModel() {
-    fun getItemList(): MutableList<ActivityItem> {
+    fun getItemList(): MutableList<Any> {
         return mutableListOf(
             ActivityItem("Line", R.drawable.ic_line, IndexLineActivity::class.java),
             ActivityItem("ScrollView", R.drawable.ic_list, ScrollViewActivity::class.java),
@@ -39,7 +42,10 @@ class MainViewModel : ViewModel() {
             ActivityItem("OpenGL", R.drawable.ic_vr, OpenGLActivity::class.java),
             ActivityItem("GoogleVideo", R.drawable.ic_vr, GoogleVideoActivity::class.java),
             ActivityItem("BookPage", R.drawable.ic_book, BookPageActivity::class.java),
-            ActivityItem("Animation", R.drawable.ic_wave, AnimActivity::class.java)
+            ActivityItem("Animation", R.drawable.ic_wave, AnimActivity::class.java),
+            ActivityItem("Article", R.drawable.ic_book, ArticleActivity::class.java),
+            ActivityItem("ArticleRecycler", R.drawable.ic_book, ArticleRecyclerActivity::class.java),
+            ActivityItem("ArticleWeb", R.drawable.ic_book, ArticleWebActivity::class.java)
         )
     }
 }
