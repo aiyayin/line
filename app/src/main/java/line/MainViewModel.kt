@@ -6,6 +6,7 @@ import com.example.yingfu.line.R
 import line.entity.ActivityItem
 import line.html.ArticleRecyclerActivity
 import line.html.ArticleWebActivity
+import line.html.WebActivity
 import line.javafoundation.tree.TreeActivity
 import line.opengl.panorama.OpenGLActivity
 import line.opengl.panorama.video360.GoogleVideoActivity
@@ -14,6 +15,7 @@ import line.view.bezier.BezierActivity
 import line.view.bookpager.BookPageActivity
 import line.view.line.IndexLineActivity
 import line.view.scroller.ScrollViewActivity
+import line.view.scroller.ScrollWebViewActivity
 import line.view.svg.SVGActivity
 import line.view.viewpager.ViewPagerActivity
 
@@ -45,7 +47,9 @@ class MainViewModel : ViewModel() {
             ActivityItem("Animation", R.drawable.ic_wave, AnimActivity::class.java),
             ActivityItem("Article", R.drawable.ic_book, ArticleActivity::class.java),
             ActivityItem("ArticleRecycler", R.drawable.ic_book, ArticleRecyclerActivity::class.java),
-            ActivityItem("ArticleWeb", R.drawable.ic_book, ArticleWebActivity::class.java)
+            ActivityItem("ArticleWeb", R.drawable.ic_book, ArticleWebActivity::class.java),
+            ActivityItem("Web", R.drawable.ic_book, WebActivity::class.java),
+            ActivityItem("ScrollWeb", R.drawable.ic_book, ScrollWebViewActivity::class.java)
         )
     }
 }

@@ -6,8 +6,9 @@
     android:orientation="vertical">
 
 
-    <line.html.FixResourceNotFountLocalWebView
+    <line.html.FixResourceNotFountWebView
         android:id="@+id/webView"
+        android:background="@color/White"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

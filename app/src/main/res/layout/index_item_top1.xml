@@ -1,98 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<line.view.scroller.MyNestedScrollParent
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/text1"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#91c7e4"
-        android:gravity="center"
-        android:text="1"/>
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
 
-    <TextView
+        <ImageView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#91c7e4"
+            android:gravity="center"
+            android:text="1"
+            app:layout_scrollFlags="snap|scroll|enterAlways" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#9de491"
+            android:gravity="center"
+            android:text="2：其实我是要悬停的" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <line.view.scroller.NestedCoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="#9de491"
-        android:gravity="center"
-        android:text="2：其实我是要悬停的"/>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-<line.view.scroller.HoverLinearLayout2
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-        <TextView
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#d2e491"
-            android:gravity="center"
-            android:text="3"/>
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#91c7e4"
-            android:gravity="center"
-            android:text="4"/>
+            <ImageView
+                android:id="@+id/text11"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#91c7e4"
+                android:gravity="center"
+                android:text="2.1"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#9de491"
-            android:gravity="center"
-            android:text="5"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#9de491"
+                android:gravity="center"
+                android:text="2.2：其实我是要悬停的" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#d2e491"
-            android:gravity="center"
-            android:text="6"/>
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#91c7e4"
-            android:gravity="center"
-            android:text="7"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#9de491"
-            android:gravity="center"
-            android:text="8"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#d2e491"
+                    android:gravity="center"
+                    android:text="3" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#d2e491"
-            android:gravity="center"
-            android:text="9"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#91c7e4"
+                    android:gravity="center"
+                    android:text="4" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#91c7e4"
-            android:gravity="center"
-            android:text="10"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#9de491"
+                    android:gravity="center"
+                    android:text="5" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#9de491"
-            android:gravity="center"
-            android:text="11"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#d2e491"
+                    android:gravity="center"
+                    android:text="6" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#d2e491"
-            android:gravity="center"
-            android:text="12"/>
-    </line.view.scroller.HoverLinearLayout2>
-</line.view.scroller.MyNestedScrollParent>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#91c7e4"
+                    android:gravity="center"
+                    android:text="7" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#9de491"
+                    android:gravity="center"
+                    android:text="8" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#d2e491"
+                    android:gravity="center"
+                    android:text="9" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#91c7e4"
+                    android:gravity="center"
+                    android:text="10" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#9de491"
+                    android:gravity="center"
+                    android:text="11" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#d2e491"
+                    android:gravity="center"
+                    android:text="12" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </line.view.scroller.NestedCoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -17,19 +17,19 @@ import line.util.ToolUtil;
  * #301023 android.content.res.Resources$NotFoundException
  * String resource ID #0x2040003
  */
-public class FixResourceNotFountLocalWebView extends WebView {
+public class FixResourceNotFountWebView extends WebView {
 
-    public FixResourceNotFountLocalWebView(Context context) {
+    public FixResourceNotFountWebView(Context context) {
         super(getContext(context));
         init();
     }
 
-    public FixResourceNotFountLocalWebView(Context context, AttributeSet attributeSet) {
+    public FixResourceNotFountWebView(Context context, AttributeSet attributeSet) {
         super(getContext(context), attributeSet);
         init();
     }
 
-    public FixResourceNotFountLocalWebView(Context context, AttributeSet attributeSet, int i) {
+    public FixResourceNotFountWebView(Context context, AttributeSet attributeSet, int i) {
         super(getContext(context), attributeSet, i);
         init();
     }

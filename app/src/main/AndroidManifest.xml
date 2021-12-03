@@ -16,7 +16,10 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AppCompat.Light"
         tools:replace="android:label">
-        <activity android:name="line.html.ArticleWebActivity"></activity>
+        <activity android:name="line.html.ArticleWebActivity"/>
+        <activity android:name="line.view.scroller.ScrollWebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="line.html.WebActivity"/>
         <activity android:name="line.html.ArticleRecyclerActivity" />
         <activity android:name="line.html.ArticleActivity" />
         <activity android:name="line.view.anim.AnimActivity" />
