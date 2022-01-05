@@ -38,6 +38,7 @@
         <activity android:name="line.javafoundation.tree.TreeActivity" />
         <activity android:name="line.view.svg.SVGActivity" />
         <activity android:name="line.view.viewpager.ViewPagerActivity" /> <!-- <activity android:name="line.flutter.MyFlutterActivity" /> -->
+        <activity android:name="line.view.viewpager.NestedViewPagerActivity" /> <!-- <activity android:name="line.flutter.MyFlutterActivity" /> -->
         <activity android:name="line.opengl.panorama.OpenGLActivity" />
         <activity android:name="line.opengl.panorama.video360.GoogleVideoActivity" />
     </application>

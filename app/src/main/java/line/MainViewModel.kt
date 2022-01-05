@@ -17,6 +17,7 @@ import line.view.line.IndexLineActivity
 import line.view.scroller.ScrollViewActivity
 import line.view.scroller.ScrollWebViewActivity
 import line.view.svg.SVGActivity
+import line.view.viewpager.NestedViewPagerActivity
 import line.view.viewpager.ViewPagerActivity
 
 /**
@@ -36,6 +37,9 @@ class MainViewModel : ViewModel() {
             ActivityItem(
                 "ViewPager",
                 R.drawable.ic_list, ViewPagerActivity::class.java
+            ), ActivityItem(
+                "NestedViewPager",
+                R.drawable.ic_list, NestedViewPagerActivity::class.java
             ),
 //            ActivityItem(
 //                "Flutter",

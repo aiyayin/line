@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <line.view.viewpager.TChildViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_height="500dp"/>
+
+        <TextView
+            android:id="@+id/txt_position"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="60dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -11,7 +11,6 @@ import com.example.yingfu.line.databinding.LayoutWebviewItemBinding
 import line.entity.ActivityItem
 import line.entity.WebViewItem
 import org.apache.commons.text.StringEscapeUtils
-import org.json.JSONObject
 
 /**
  *
@@ -54,17 +53,23 @@ class WebViewItemBinder() : RecyclerItemBinder<WebViewItem, LayoutWebviewItemBin
 
     override fun convert(holder: BinderVBHolder<LayoutWebviewItemBinding>, data: WebViewItem) {
         var webView = holder.viewBinding.webView
-        webView.loadUrl("file:///android_asset/article/article6.html")
+        webView.loadUrl("file:///android_asset/articletemplate/articleDetail.html")
         webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
                 super.onPageFinished(view, url)
-                val jsonObject = JSONObject()
-                jsonObject.put("content",body)
-//                body = body.replace("'","&acute;")
-//                body = body.replace("'","\\'")
-//                body = StringEscapeUtils.escapeEcmaScript(body)
-                val s = "javascript:callContent('${body}');"
-                webView.loadUrl(s)
+
+
+                body = body.replace(
+                    "<img",
+                    "<img class=\"placeholder\" alt=\"\" onerror=\"this.src = 'default_pic.png'\" "
+                )
+//                body = body.replace(
+//                    "<img",
+//                    "<img class=\"placeholder\" alt=\"\" onerror=\"this.classList.add('wutu')\" "
+//                )
+                body = StringEscapeUtils.escapeEcmaScript(body)
+
+                webView.loadUrl("javascript:setContent('${body}')")
 
             }
 

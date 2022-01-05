@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
 
+import androidx.annotation.RawRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
 
 import com.example.yingfu.line.R;
 
 import org.sufficientlysecure.htmltextview.HtmlTextView;
+
+import java.io.InputStream;
+import java.util.Scanner;
 
 public class ArticleActivity extends AppCompatActivity {
 
@@ -19,8 +23,8 @@ public class ArticleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article);
 //222
-        HtmlTextView text = findViewById(R.id.text);
-        text.setHtml(R.raw.article,new HtmlGlideImageGetter(text,R.drawable.ic_book));
+        TextView text = findViewById(R.id.text);
+        text.setText(HtmlCompat.fromHtml(convertStreamToString(R.raw.article3), HtmlCompat.FROM_HTML_OPTION_USE_CSS_COLORS));
 //        RichText.fromHtml(R.raw.article).into(text);
 
 
@@ -31,6 +35,11 @@ public class ArticleActivity extends AppCompatActivity {
 
     }
 
+    private String convertStreamToString(@RawRes int resId) {
+        InputStream inputStreamText = getResources().openRawResource(resId);
+        Scanner s = new Scanner(inputStreamText).useDelimiter("\\A");
+        return s.hasNext() ? s.next() : "";
+    }
 
 
 }

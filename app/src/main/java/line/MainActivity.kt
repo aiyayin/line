@@ -4,7 +4,9 @@ package line
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
@@ -14,6 +16,7 @@ import com.example.yingfu.line.R
 import line.entity.ActivityItem
 import line.view.recyclerview.MainActivityAdapter
 import java.util.*
+
 
 class MainActivity : BaseActivity() {
     lateinit var activityItems: MutableList<Any>
@@ -61,11 +64,19 @@ class MainActivity : BaseActivity() {
         }
 
         recyclerView.adapter = mainActivityAdapter
+        val wifiManger: WifiManager? = ContextCompat.getSystemService(
+            this,
+            WifiManager::class.java
+        )
 
     }
 
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, results: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        results: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, results)
         if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_ID) {
             if (results.isNotEmpty() && results[0] == PackageManager.PERMISSION_GRANTED) {
