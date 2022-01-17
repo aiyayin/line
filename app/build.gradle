@@ -4,18 +4,18 @@ apply plugin: 'kotlin-kapt'
 //apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion rootProject.ext.defaultConfigs.compileSdkVersion
     defaultConfig {
         applicationId "com.example.yingfu.line"
-        minSdkVersion 23
-        targetSdkVersion 29
+        minSdkVersion rootProject.ext.defaultConfigs.minSdkVersion
+        targetSdkVersion rootProject.ext.defaultConfigs.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         ndk {
-            abiFilters 'x86', 'armeabi-v7a', 'x86_64'
+            abiFilters 'x86', 'arm64-v8a'
         }
     }
 
@@ -40,16 +40,15 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.dynamicanimation:dynamicanimation:1.1.0-alpha03'
-    implementation "android.arch.navigation:navigation-fragment:$nav_version"
-    implementation "android.arch.navigation:navigation-ui:$nav_version"
+
+    implementation rootProject.ext.libs.dynamicanimation
+    implementation rootProject.ext.libs.navigation_fragment
+    implementation rootProject.ext.libs.navigation_ui
+
 
     implementation project(path: ':javabase')
     implementation project(path: ':base')
     implementation project(path: ':demo')
-//    implementation "android.arch.lifecycle:livedata-ktx:2.1.0"
-
 
 
 }

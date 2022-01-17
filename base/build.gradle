@@ -5,17 +5,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
+    compileSdkVersion rootProject.ext.defaultConfigs.compileSdkVersion
+    buildToolsVersion rootProject.ext.defaultConfigs.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 23
-        targetSdkVersion 30
+        minSdkVersion rootProject.ext.defaultConfigs.minSdkVersion
+        targetSdkVersion rootProject.ext.defaultConfigs.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -37,17 +35,16 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation rootProject.ext.libs.multidex
 
-    api 'androidx.appcompat:appcompat:1.4.1'
-    api 'com.google.android.material:material:1.4.0'
-    api 'androidx.constraintlayout:constraintlayout:2.1.2'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    api 'com.google.android.material:material:1.4.0'
+    api rootProject.ext.libs.appcompat
+    api rootProject.ext.libs.material
+    api rootProject.ext.libs.constraintlayout
+    api rootProject.ext.libs.kotlin_stdlib_jdk7
+    api rootProject.ext.libs.lifecycle_extensions
+    api rootProject.ext.libs.lifecycle_viewmodel
+    api rootProject.ext.libs.lifecycle_livedata
 
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    api rootProject.ext.openLibs.CymChad_Adapter
 
-    api "android.arch.lifecycle:extensions:$kotlin_version"
-    api "android.arch.lifecycle:viewmodel:$kotlin_version"
-    api "android.arch.lifecycle:livedata:$kotlin_version"
 }
