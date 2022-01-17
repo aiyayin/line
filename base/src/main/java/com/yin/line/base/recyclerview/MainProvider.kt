@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import com.chad.library.adapter.base.binder.QuickViewBindingItemBinder
 import com.yin.line.base.databinding.LayoutActivityItemBinding
+import com.yin.line.base.databinding.LayoutTextItemBinding
 import com.yin.line.base.entity.ActivityItem
+import com.yin.line.base.entity.TextItem
 
 /**
  *
@@ -40,3 +42,22 @@ import com.yin.line.base.entity.ActivityItem
 
 
     }
+class TextItemBinder() : RecyclerItemBinder<TextItem, LayoutTextItemBinding>() {
+
+
+    override fun onCreateViewBinding(
+        layoutInflater: LayoutInflater,
+        parent: ViewGroup,
+        viewType: Int
+    ): LayoutTextItemBinding {
+        return LayoutTextItemBinding.inflate(layoutInflater, parent, false)
+    }
+
+    override fun convert(holder: QuickViewBindingItemBinder.BinderVBHolder<LayoutTextItemBinding>, data: TextItem) {
+        holder.viewBinding.tvTitle.text = data.content
+    }
+
+
+
+
+}

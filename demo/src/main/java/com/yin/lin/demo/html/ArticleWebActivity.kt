@@ -1,13 +1,14 @@
 package com.yin.lin.demo.html
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.yin.lin.demo.R
 import com.yin.line.base.BaseActivity
+import com.yin.line.base.entity.TextItem
 import com.yin.line.base.entity.WebViewItem
+import com.yin.line.base.recyclerview.MainActivityAdapter
+import com.yin.line.base.recyclerview.TextItemBinder
 
 class ArticleWebActivity : BaseActivity() {
     var body =
@@ -41,15 +42,48 @@ class ArticleWebActivity : BaseActivity() {
 //            }
 //        });
         activityItems.add(WebViewItem(""))
-//        val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-//        activityItems.addAll(mainViewModel.getItemList())
+        activityItems.addAll(getItemList())
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager =
             StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-//        recyclerView.adapter = MainActivityAdapter(activityItems)
+        recyclerView.adapter = MainActivityAdapter(activityItems).apply {
+            addItemBinder(
+                WebViewItem::class.java,
+                WebViewItemBinder()
+            )
+            addItemBinder(
+                TextItem::class.java,
+                TextItemBinder()
+            )
+
+        }
 
     }
 
+    private fun getItemList(): MutableList<Any> {
+        return mutableListOf(
+            TextItem("Line"),
+            TextItem("ScrollView"),
+            TextItem("Bezier"),
+            TextItem("Tree"),
+            TextItem("SVG"),
+            TextItem(
+                "ViewPager",
+            ),
+            TextItem(
+                "NestedViewPager"
+            ),
+            TextItem("OpenGL"),
+            TextItem("GoogleVideo"),
+            TextItem("BookPage"),
+            TextItem("Animation"),
+            TextItem("Article"),
+            TextItem("ArticleRecycler"),
+            TextItem("ArticleWeb"),
+            TextItem("Web"),
+            TextItem("ScrollWeb"),
+        )
+    }
 
 }

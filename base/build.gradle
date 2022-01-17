@@ -40,6 +40,7 @@ dependencies {
     api rootProject.ext.libs.appcompat
     api rootProject.ext.libs.material
     api rootProject.ext.libs.constraintlayout
+    api rootProject.ext.libs.recyclerview
     api rootProject.ext.libs.kotlin_stdlib_jdk7
     api rootProject.ext.libs.lifecycle_extensions
     api rootProject.ext.libs.lifecycle_viewmodel
