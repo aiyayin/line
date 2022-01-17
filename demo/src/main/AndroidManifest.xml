@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yin.lin.demo">
+
+    <application>
+        <activity android:name="com.yin.lin.demo.html.ArticleWebActivity" />
+        <activity android:name="com.yin.lin.demo.html.WebActivity" />
+        <activity android:name="com.yin.lin.demo.html.ArticleRecyclerActivity" />
+        <activity android:name="com.yin.lin.demo.html.ArticleActivity" />
+        <activity android:name="com.yin.lin.demo.opengl.panorama.OpenGLActivity" />
+        <activity android:name="com.yin.lin.demo.opengl.panorama.video360.GoogleVideoActivity" />
+    </application>
+</manifest>

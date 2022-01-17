@@ -6,15 +6,15 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.yingfu.line.R
-import line.entity.ActivityItem
-import line.view.recyclerview.MainActivityAdapter
+import com.yin.line.base.BaseActivity
+import com.yin.line.base.entity.ActivityItem
+import com.yin.line.base.recyclerview.MainActivityAdapter
 import java.util.*
 
 

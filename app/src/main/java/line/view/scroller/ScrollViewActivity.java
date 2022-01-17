@@ -1,10 +1,10 @@
 package line.view.scroller;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import line.BaseActivity;
+
 
 import com.example.yingfu.line.R;
+import com.yin.line.base.BaseActivity;
 
 public class ScrollViewActivity extends BaseActivity {
 

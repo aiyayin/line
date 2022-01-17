@@ -12,8 +12,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 import com.example.yingfu.line.R;
 import com.google.android.material.tabs.TabLayout;
+import com.yin.line.base.BaseActivity;
+import com.yin.line.base.util.ToolUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -24,8 +27,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import line.BaseActivity;
-import line.util.ToolUtil;
 
 public class IndexLineActivity extends BaseActivity implements BlankFragment.OnFragmentInteractionListener {
     @Override

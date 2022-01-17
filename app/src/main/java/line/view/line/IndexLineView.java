@@ -9,8 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.yingfu.line.R;
-
-import line.util.ToolUtil;
+import com.yin.line.base.util.ToolUtil;
 
 /**
  * @author YING.FU

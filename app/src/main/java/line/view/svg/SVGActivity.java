@@ -2,12 +2,11 @@ package line.view.svg;
 
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import line.BaseActivity;
 
 import android.widget.ImageView;
 
 import com.example.yingfu.line.R;
+import com.yin.line.base.BaseActivity;
 
 public class SVGActivity extends BaseActivity {
 

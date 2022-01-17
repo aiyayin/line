@@ -19,9 +19,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
-import com.example.yingfu.line.R;
 
 import androidx.annotation.Nullable;
+
+import com.example.yingfu.line.R;
 
 /**
  * 波浪\(^o^)/~

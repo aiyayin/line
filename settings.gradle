@@ -1,2 +1,4 @@
-// MyApp/settings.gradle
+include ':base'
+include ':javabase'
+include ':demo'// MyApp/settings.gradle
 include ':app'

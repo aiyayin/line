@@ -5,13 +5,12 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.yingfu.line.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.yin.line.base.BaseActivity;
 
-public class ScrollWebViewActivity extends AppCompatActivity {
+public class ScrollWebViewActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

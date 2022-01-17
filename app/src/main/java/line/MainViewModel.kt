@@ -1,15 +1,15 @@
 package line
 
 import androidx.lifecycle.ViewModel
-import line.html.ArticleActivity
 import com.example.yingfu.line.R
-import line.entity.ActivityItem
-import line.html.ArticleRecyclerActivity
-import line.html.ArticleWebActivity
-import line.html.WebActivity
-import line.javafoundation.tree.TreeActivity
-import line.opengl.panorama.OpenGLActivity
-import line.opengl.panorama.video360.GoogleVideoActivity
+import com.yin.lin.demo.html.ArticleActivity
+import com.yin.line.base.entity.ActivityItem
+import com.yin.lin.demo.html.ArticleRecyclerActivity
+import com.yin.lin.demo.html.ArticleWebActivity
+import com.yin.lin.demo.html.WebActivity
+import com.yin.line.javabase.tree.TreeActivity
+import com.yin.lin.demo.opengl.panorama.OpenGLActivity
+import com.yin.lin.demo.opengl.panorama.video360.GoogleVideoActivity
 import line.view.anim.AnimActivity
 import line.view.bezier.BezierActivity
 import line.view.bookpager.BookPageActivity

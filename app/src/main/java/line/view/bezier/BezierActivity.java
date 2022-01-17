@@ -3,8 +3,8 @@ package line.view.bezier;
 import android.os.Bundle;
 
 import com.example.yingfu.line.R;
+import com.yin.line.base.BaseActivity;
 
-import line.BaseActivity;
 
 public class BezierActivity extends BaseActivity {
 

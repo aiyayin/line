@@ -1,10 +1,12 @@
 package line.view.bookpager;
 
-import line.BaseActivity;
+
 
 import android.os.Bundle;
 
 import com.example.yingfu.line.R;
+import com.yin.line.base.BaseActivity;
+
 
 public class BookPageActivity extends BaseActivity {
 

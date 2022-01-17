@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.yingfu.line.R;
+import com.yin.line.base.BaseActivity;
 
-public class NestedViewPagerActivity extends AppCompatActivity {
+public class NestedViewPagerActivity extends BaseActivity {
 
 
     @Override
