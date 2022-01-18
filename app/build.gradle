@@ -4,11 +4,11 @@ apply plugin: 'kotlin-kapt'
 //apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion rootProject.ext.defaultConfigs.compileSdkVersion
+    compileSdkVersion BuildConfigs.compileSdkVersion
     defaultConfig {
         applicationId "com.example.yingfu.line"
-        minSdkVersion rootProject.ext.defaultConfigs.minSdkVersion
-        targetSdkVersion rootProject.ext.defaultConfigs.targetSdkVersion
+        minSdkVersion BuildConfigs.minSdkVersion
+        targetSdkVersion BuildConfigs.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -41,9 +41,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation rootProject.ext.libs.dynamicanimation
-    implementation rootProject.ext.libs.navigation_fragment
-    implementation rootProject.ext.libs.navigation_ui
+    implementation Libs.dynamicanimation
+    implementation Libs.navigation_fragment
+    implementation Libs.navigation_ui
 
 
     implementation project(path: ':javabase')

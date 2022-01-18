@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion rootProject.ext.defaultConfigs.compileSdkVersion
-    buildToolsVersion rootProject.ext.defaultConfigs.buildToolsVersion
+    compileSdkVersion BuildConfigs.compileSdkVersion
+    buildToolsVersion BuildConfigs.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.defaultConfigs.minSdkVersion
-        targetSdkVersion rootProject.ext.defaultConfigs.targetSdkVersion
+        minSdkVersion BuildConfigs.minSdkVersion
+        targetSdkVersion BuildConfigs.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -36,10 +36,10 @@ android {
 
 dependencies {
 
-    implementation rootProject.ext.openLibs.html_textview
-    implementation rootProject.ext.openLibs.glide
-    implementation rootProject.ext.openLibs.glide_okhttp3_integration
-    implementation rootProject.ext.openLibs.commons_text
+    implementation OpenLibs.html_textview
+    implementation OpenLibs.glide
+    implementation OpenLibs.glide_okhttp3_integration
+    implementation OpenLibs.commons_text
 
     implementation project(path: ':base')
 }
