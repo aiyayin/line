@@ -3,13 +3,15 @@ package line
 import androidx.lifecycle.ViewModel
 import com.example.yingfu.line.R
 import com.yin.lin.demo.html.ArticleActivity
-import com.yin.line.base.entity.ActivityItem
 import com.yin.lin.demo.html.ArticleRecyclerActivity
 import com.yin.lin.demo.html.ArticleWebActivity
 import com.yin.lin.demo.html.WebActivity
-import com.yin.line.javabase.tree.TreeActivity
+import com.yin.lin.demo.opengl.SensorActivity
 import com.yin.lin.demo.opengl.panorama.OpenGLActivity
 import com.yin.lin.demo.opengl.panorama.video360.GoogleVideoActivity
+import com.yin.line.base.entity.ActivityItem
+import com.yin.line.javabase.tree.TreeActivity
+import line.compose.TestActivity
 import line.view.anim.AnimActivity
 import line.view.bezier.BezierActivity
 import line.view.bookpager.BookPageActivity
@@ -37,7 +39,8 @@ class MainViewModel : ViewModel() {
             ActivityItem(
                 "ViewPager",
                 R.drawable.ic_list, ViewPagerActivity::class.java
-            ), ActivityItem(
+            ),
+            ActivityItem(
                 "NestedViewPager",
                 R.drawable.ic_list, NestedViewPagerActivity::class.java
             ),
@@ -50,10 +53,16 @@ class MainViewModel : ViewModel() {
             ActivityItem("BookPage", R.drawable.ic_book, BookPageActivity::class.java),
             ActivityItem("Animation", R.drawable.ic_wave, AnimActivity::class.java),
             ActivityItem("Article", R.drawable.ic_book, ArticleActivity::class.java),
-            ActivityItem("ArticleRecycler", R.drawable.ic_book, ArticleRecyclerActivity::class.java),
+            ActivityItem(
+                "ArticleRecycler",
+                R.drawable.ic_book,
+                ArticleRecyclerActivity::class.java
+            ),
             ActivityItem("ArticleWeb", R.drawable.ic_book, ArticleWebActivity::class.java),
             ActivityItem("Web", R.drawable.ic_book, WebActivity::class.java),
-            ActivityItem("ScrollWeb", R.drawable.ic_book, ScrollWebViewActivity::class.java)
+            ActivityItem("ScrollWeb", R.drawable.ic_book, ScrollWebViewActivity::class.java),
+            ActivityItem("compose", R.drawable.ic_book, TestActivity::class.java),
+            ActivityItem("Sensor3D", R.drawable.ic_vr, SensorActivity::class.java)
         )
     }
 }

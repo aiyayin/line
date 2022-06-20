@@ -13,13 +13,17 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:replace="android:label">
+        <activity
+            android:name="line.compose.TestActivity"
+            android:exported="false" />
 
-        <activity android:name="line.view.scroller.ScrollWebViewActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
+        <activity
+            android:name="line.view.scroller.ScrollWebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="line.view.anim.AnimActivity" />
         <activity android:name="line.view.bookpager.BookPageActivity" />
         <activity android:name="line.MainActivity">
@@ -35,8 +39,7 @@
         <activity android:name="line.view.bezier.BezierActivity" />
         <activity android:name="line.view.svg.SVGActivity" />
         <activity android:name="line.view.viewpager.ViewPagerActivity" /> <!-- <activity android:name="line.flutter.MyFlutterActivity" /> -->
-        <activity android:name="line.view.viewpager.NestedViewPagerActivity" /> <!-- <activity android:name="line.flutter.MyFlutterActivity" /> -->
-
+        <activity android:name="line.view.viewpager.NestedViewPagerActivity" />
     </application>
 
 </manifest>

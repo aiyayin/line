@@ -34,7 +34,25 @@ object Libs {
     const val navigation_fragment =
         "android.arch.navigation:navigation-fragment:${Versions.nav_version}"
     const val navigation_ui = "android.arch.navigation:navigation-ui:${Versions.nav_version}"
+    const val activity = "androidx.activity:activity-ktx:1.4.0"
+
 }
+
+
+object Compose {
+    const val version = "1.1.1"
+    const val animation = "androidx.compose.animation:animation:$version"
+    const val ui = "androidx.compose.ui:ui:$version"
+    const val material = "androidx.compose.material:material:$version"
+    const val compiler = "androidx.compose.compiler:compiler:$version"
+    const val activity = "androidx.activity:activity-compose:1.4.0"
+    const val constraintlayout = "androidx.constraintlayout:constraintlayout-compose:1.0.0"
+    const val ui_tool = "androidx.compose.ui:ui-tooling:$version"
+    const val pager = "com.google.accompanist:accompanist-pager:0.24.0-alpha"
+//    const val viewmodel_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0"
+
+}
+
 
 object OpenLibs {
     const val CymChad_Adapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7"

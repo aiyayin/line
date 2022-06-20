@@ -10,7 +10,7 @@
     <group android:name="anim_group1">
         <path
             android:name="add_h"
-            android:pathData="M11,2 L11,20"
+            android:pathData="M12,4 L12,20"
             android:strokeColor="#000000"
             android:strokeLineCap="round"
             android:strokeWidth="2"/>
@@ -20,7 +20,7 @@
 
         <path
             android:name="add_w"
-            android:pathData="M2,11 L20,11"
+            android:pathData="M4,12 L20,12"
             android:strokeColor="#000000"
             android:strokeLineCap="round"
             android:strokeWidth="2"/>

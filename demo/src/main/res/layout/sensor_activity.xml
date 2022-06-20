@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.yin.lin.demo.opengl.SensorLayoutWithTrans
+        android:id="@+id/sensor_ll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/ball">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </com.yin.lin.demo.opengl.SensorLayoutWithTrans>
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="开始" />
+
+    <TextView
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="暂停" />
+
+
+    <com.yin.lin.demo.opengl.SensorLayoutWithScroll
+        android:id="@+id/sensor_ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:background="@color/blue"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/ic_demo_book">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </com.yin.lin.demo.opengl.SensorLayoutWithScroll>
+
+    <TextView
+        android:id="@+id/start_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="开始" />
+
+    <TextView
+        android:id="@+id/stop_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="暂停" />
+</LinearLayout>

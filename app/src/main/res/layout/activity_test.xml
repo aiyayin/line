@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="line.compose.TestActivity">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="add"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="more"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="6dp"
+        android:layout_height="12dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_more_vector" />
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_more_vector" />
+
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_more_vector" />
+</androidx.appcompat.widget.LinearLayoutCompat>
