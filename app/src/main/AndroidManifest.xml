@@ -26,6 +26,14 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name="line.view.anim.AnimActivity" />
         <activity android:name="line.view.bookpager.BookPageActivity" />
+        <activity
+            android:name="line.MainAIDLActivity"
+            android:process="com.example.yingfu.line.aidl" />
+
+        <service android:name="com.yin.line.javabase.binder.BinderPoolService">
+
+        </service>
+
         <activity android:name="line.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

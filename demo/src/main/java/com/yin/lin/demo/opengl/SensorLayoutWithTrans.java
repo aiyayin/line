@@ -6,6 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -59,6 +60,10 @@ public class SensorLayoutWithTrans extends FrameLayout implements SensorEventLis
     private float finalScrollY = 0;
 
     private Runnable action;
+
+
+    private float lastTranX = 0;
+    private float lastTranY = 0;
 
     public SensorLayoutWithTrans(@NonNull Context context) {
         this(context, null);
@@ -214,6 +219,11 @@ public class SensorLayoutWithTrans extends FrameLayout implements SensorEventLis
             mSensorManager.registerListener(this, accelerateSensor, SensorManager.SENSOR_DELAY_GAME);
             mSensorManager.registerListener(this, magneticSensor, SensorManager.SENSOR_DELAY_GAME);
             childView = getChildAt(0);
+            if (childView != null) {
+                lastTranX = childView.getTranslationX();
+                lastTranY = childView.getTranslationY();
+                Log.e("yin>> ", "lastTranX : " + lastTranX + " lastTranY : " + lastTranY);
+            }
         }
     }
 

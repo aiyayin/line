@@ -62,7 +62,8 @@ class MainViewModel : ViewModel() {
             ActivityItem("Web", R.drawable.ic_book, WebActivity::class.java),
             ActivityItem("ScrollWeb", R.drawable.ic_book, ScrollWebViewActivity::class.java),
             ActivityItem("compose", R.drawable.ic_book, TestActivity::class.java),
-            ActivityItem("Sensor3D", R.drawable.ic_vr, SensorActivity::class.java)
+            ActivityItem("Sensor3D", R.drawable.ic_vr, SensorActivity::class.java),
+            ActivityItem("AIDL", R.drawable.ic_line, MainAIDLActivity::class.java)
         )
     }
 }

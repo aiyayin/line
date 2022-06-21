@@ -5,6 +5,8 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion BuildConfigs.compileSdkVersion
+    buildToolsVersion BuildConfigs.buildToolsVersion
+
     defaultConfig {
         applicationId "com.example.yingfu.line"
         minSdkVersion BuildConfigs.minSdkVersion

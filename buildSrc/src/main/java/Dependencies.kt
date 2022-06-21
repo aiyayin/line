@@ -3,7 +3,7 @@ object BuildConfigs {
     const val buildToolsVersion = "31.0.0"
 
     const val minSdkVersion = 23
-    const val targetSdkVersion = 30
+    const val targetSdkVersion = 31
 }
 
 object Versions {

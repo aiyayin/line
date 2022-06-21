@@ -6,6 +6,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.os.Process
+import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
@@ -15,7 +17,6 @@ import com.example.yingfu.line.R
 import com.yin.line.base.BaseActivity
 import com.yin.line.base.entity.ActivityItem
 import com.yin.line.base.recyclerview.MainActivityAdapter
-import java.util.*
 
 
 class MainActivity : BaseActivity() {
@@ -24,6 +25,10 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+
+        val pid = Process.myPid()
+        Log.d("yin>>", "MainActivity 当前进程ID为：$pid")
+
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.READ_EXTERNAL_STORAGE
