@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <line.view.viewpager.TFrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.line.view.viewpager.TFrameLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="#9fdcf1"
@@ -17,7 +16,7 @@
             android:layout_height="200dp"
             android:background="#ef93b4"
             android:clipChildren="false"/>
-    </line.view.viewpager.TFrameLayout>
+    </com.line.view.viewpager.TFrameLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager_2"

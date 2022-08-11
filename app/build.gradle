@@ -55,9 +55,10 @@ dependencies {
     implementation Libs.dynamicanimation
     implementation Libs.navigation_fragment
     implementation Libs.navigation_ui
+    implementation Libs.gson
 
 
-    implementation project(path: ':javabase')
+    implementation project(path: ':javalib')
     implementation project(path: ':base')
     implementation project(path: ':demo')
 

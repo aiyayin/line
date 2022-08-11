@@ -27,7 +27,7 @@
             android:text="2：其实我是要悬停的" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <line.view.scroller.NestedCoordinatorLayout
+    <com.line.view.scroller.NestedCoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -135,5 +135,5 @@
                     android:text="12" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-    </line.view.scroller.NestedCoordinatorLayout>
+    </com.line.view.scroller.NestedCoordinatorLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

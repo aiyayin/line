@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.yin.line.base.LineApplication"
+        android:name="com.line.base.LineApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -17,24 +17,25 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:label">
         <activity
-            android:name="line.compose.TestActivity"
+            android:name="com.line.compose.TestComposeActivity"
             android:exported="false" />
 
 
         <activity
-            android:name="line.view.scroller.ScrollWebViewActivity"
+            android:name="com.line.view.scroller.ScrollWebViewActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name="line.view.anim.AnimActivity" />
-        <activity android:name="line.view.bookpager.BookPageActivity" />
+        <activity android:name="com.line.view.anim.AnimActivity" />
+        <activity android:name="com.line.view.bookpager.BookPageActivity" />
         <activity
-            android:name="line.MainAIDLActivity"
+            android:name="com.line.binder.MainAIDLActivity"
             android:process="com.example.yingfu.line.aidl" />
 
-        <service android:name="com.yin.line.javabase.binder.BinderPoolService">
+        <service android:name="com.line.binder.BinderPoolService">
 
         </service>
 
-        <activity android:name="line.MainActivity">
+        <activity android:name="com.line.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -42,12 +43,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="line.view.line.IndexLineActivity" />
-        <activity android:name="line.view.scroller.ScrollViewActivity" />
-        <activity android:name="line.view.bezier.BezierActivity" />
-        <activity android:name="line.view.svg.SVGActivity" />
-        <activity android:name="line.view.viewpager.ViewPagerActivity" /> <!-- <activity android:name="line.flutter.MyFlutterActivity" /> -->
-        <activity android:name="line.view.viewpager.NestedViewPagerActivity" />
+        <activity android:name="com.line.view.line.IndexLineActivity" />
+        <activity android:name="com.line.view.scroller.ScrollViewActivity" />
+        <activity android:name="com.line.view.bezier.BezierActivity" />
+        <activity android:name="com.line.view.svg.SVGActivity" />
+        <activity android:name="com.line.view.viewpager.ViewPagerActivity" /> <!-- <activity android:name="line.flutter.MyFlutterActivity" /> -->
+        <activity android:name="com.line.view.viewpager.NestedViewPagerActivity" />
     </application>
 
 </manifest>

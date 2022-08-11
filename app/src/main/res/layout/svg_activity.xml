@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="line.view.svg.SVGActivity">
+    tools:context="com.line.view.svg.SVGActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image"

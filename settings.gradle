@@ -1,4 +1,4 @@
 include ':base'
-include ':javabase'
 include ':demo'// MyApp/settings.gradle
 include ':app'
+include ':javalib'

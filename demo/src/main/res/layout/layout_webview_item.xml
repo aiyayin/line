@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
 
-    <com.yin.lin.demo.html.FixResourceNotFountWebView
+    <com.line.demo.html.FixResourceNotFountWebView
         android:id="@+id/webView"
         android:background="@color/White"
         android:layout_width="match_parent"

@@ -35,6 +35,7 @@ object Libs {
         "android.arch.navigation:navigation-fragment:${Versions.nav_version}"
     const val navigation_ui = "android.arch.navigation:navigation-ui:${Versions.nav_version}"
     const val activity = "androidx.activity:activity-ktx:1.4.0"
+    const val gson = "com.google.code.gson:gson:2.8.5"
 
 }
 

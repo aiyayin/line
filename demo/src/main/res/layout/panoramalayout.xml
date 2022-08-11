@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-   <com.yin.lin.demo.opengl.panorama.IViews
+   <com.line.demo.opengl.panorama.IViews
         android:id="@+id/mIViews"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

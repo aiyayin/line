@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="line.view.bookpager.BookPageActivity">
+    tools:context="com.line.view.bookpager.BookPageActivity">
 
 <!--    <com.anlia.pageturn.view.BookPageView-->
 <!--        android:layout_width="match_parent"-->

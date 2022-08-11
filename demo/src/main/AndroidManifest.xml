@@ -3,12 +3,12 @@
     package="com.yin.lin.demo">
 
     <application>
-        <activity android:name="com.yin.lin.demo.html.ArticleWebActivity" />
-        <activity android:name="com.yin.lin.demo.html.WebActivity" />
-        <activity android:name="com.yin.lin.demo.html.ArticleRecyclerActivity" />
-        <activity android:name="com.yin.lin.demo.html.ArticleActivity" />
-        <activity android:name="com.yin.lin.demo.opengl.panorama.OpenGLActivity" />
-        <activity android:name="com.yin.lin.demo.opengl.panorama.video360.GoogleVideoActivity" />
-        <activity android:name="com.yin.lin.demo.opengl.SensorActivity" />
+        <activity android:name="com.line.demo.html.ArticleWebActivity" />
+        <activity android:name="com.line.demo.html.WebActivity" />
+        <activity android:name="com.line.demo.html.ArticleRecyclerActivity" />
+        <activity android:name="com.line.demo.html.ArticleActivity" />
+        <activity android:name="com.line.demo.opengl.panorama.OpenGLActivity" />
+        <activity android:name="com.line.demo.opengl.panorama.video360.GoogleVideoActivity" />
+        <activity android:name="com.line.demo.opengl.SensorActivity" />
     </application>
 </manifest>
