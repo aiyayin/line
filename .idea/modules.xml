@@ -4,9 +4,21 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/line.iml" filepath="$PROJECT_DIR$/.idea/modules/line.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/line.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/line.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/line.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/line.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/line.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/line.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/line.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/line.app.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/line.base.iml" filepath="$PROJECT_DIR$/.idea/modules/base/line.base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/line.base.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base/line.base.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/line.base.main.iml" filepath="$PROJECT_DIR$/.idea/modules/base/line.base.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/line.base.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/base/line.base.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/line.demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/line.demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/line.demo.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/line.demo.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/line.demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/line.demo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/line.demo.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/line.demo.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabase/line.javabase.iml" filepath="$PROJECT_DIR$/.idea/modules/javabase/line.javabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabase/line.javabase.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/javabase/line.javabase.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabase/line.javabase.main.iml" filepath="$PROJECT_DIR$/.idea/modules/javabase/line.javabase.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javabase/line.javabase.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/javabase/line.javabase.unitTest.iml" />
     </modules>
   </component>
 </project>
