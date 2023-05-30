@@ -15,6 +15,11 @@ object ToolUtil {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.resources.displayMetrics).toInt()
     }
 
+    @JvmStatic
+    fun dpToPx(dp: Float): Int {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, LineApplication.context.resources.displayMetrics).toInt()
+    }
+
     /**
      * px转dip
      *

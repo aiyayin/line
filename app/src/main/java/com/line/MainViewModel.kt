@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import com.example.yingfu.line.R
 import com.line.base.entity.ActivityItem
 import com.line.demo.yu.ChartActivity
+import com.line.view.line.IndexLineActivity
+import com.line.view.viewpager.ViewPagerActivity
 
 /**
  * @author ying.fu
@@ -14,7 +16,7 @@ import com.line.demo.yu.ChartActivity
 class MainViewModel : ViewModel() {
     fun getItemList(): MutableList<Any> {
         return mutableListOf(
-//            ActivityItem("Line", R.drawable.ic_line, IndexLineActivity::class.java),
+            ActivityItem("Line", R.drawable.ic_line, IndexLineActivity::class.java),
 //            ActivityItem("ScrollView", R.drawable.ic_list, ScrollViewActivity::class.java),
 //            ActivityItem("Bezier", R.drawable.ic_wave, BezierActivity::class.java),
 //            ActivityItem("Tree", R.drawable.ic_tree, TreeActivity::class.java),
@@ -47,7 +49,8 @@ class MainViewModel : ViewModel() {
 //            ActivityItem("compose", R.drawable.ic_book, TestComposeActivity::class.java),
 //            ActivityItem("Sensor3D", R.drawable.ic_vr, SensorActivity::class.java),
 //            ActivityItem("AIDL", R.drawable.ic_line, MainAIDLActivity::class.java),
-            ActivityItem("Chart", R.drawable.ic_list,ChartActivity::class.java)
+            ActivityItem("Chart", R.drawable.ic_list,ChartActivity::class.java),
+            ActivityItem("viewpager", R.drawable.ic_list,ViewPagerActivity::class.java)
         )
     }
 }

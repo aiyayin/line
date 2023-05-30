@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.line.demo.yu.LineChartView
         android:id="@+id/chart"
         android:layout_margin="20dp"
+        android:background="#4D96C1EB"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:layout_height="212dp"/>
 
     <com.line.demo.yu.StrokeTextView
         android:id="@+id/stroke_text"
+        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chart"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_margin="40dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="200dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

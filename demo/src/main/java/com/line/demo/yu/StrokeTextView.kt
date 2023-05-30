@@ -16,14 +16,13 @@ import androidx.appcompat.widget.AppCompatTextView
  */
 class StrokeTextView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
     AppCompatTextView(context, attrs, defStyleAttr) {
-    private var mGradientColors = intArrayOf(Color.BLUE, Color.GREEN, Color.BLACK)
+    private var mGradientColors = intArrayOf(Color.GREEN, Color.GRAY)
 
-    fun setGradientColors(gradientColors: IntArray) {
+    fun setStrokeGradientColors(gradientColors: IntArray) {
         mGradientColors = gradientColors
-
     }
 
-      var outlineTextView: TextView = TextView(context)
+    var outlineTextView: TextView = TextView(context)
 
     init {
         init()
@@ -33,18 +32,18 @@ class StrokeTextView @JvmOverloads constructor(context: Context, attrs: Attribut
      * init
      */
     fun init() {
-        setPadding(20,0,0,0)
+//        setPadding(20, 0, 20, 0)
         val paint = outlineTextView.paint
-        paint.strokeWidth = 12f // 描边宽度
-        paint.style = Paint.Style.FILL_AND_STROKE
-//        outlineTextView.setTextColor(Color.BLUE) // 描边颜色
+        paint.strokeWidth = 20f // 描边宽度
+        paint.style = Paint.Style.STROKE
         outlineTextView.gravity = gravity
+        outlineTextView.setTextColor(Color.RED)
         outlineTextView.typeface = Typeface.DEFAULT_BOLD
-        outlineTextView.setPadding(18,2,0,0)
+//        outlineTextView.setPadding(18, 2, 20, 0)
 
-        val gradient =
-            LinearGradient(0f, 0f, 0f, 300f, mGradientColors, null, Shader.TileMode.CLAMP)
-        outlineTextView.paint.shader = gradient
+
+//        setLineSpacing(0f, 0.8f)
+//        outlineTextView.setLineSpacing(0f, 0.8f)
 
     }
 
@@ -63,14 +62,29 @@ class StrokeTextView @JvmOverloads constructor(context: Context, attrs: Attribut
         outlineTextView.setPadding(left, top, right, bottom)
     }
 
-//    override fun setTextColor(color: Int) {
-//        super.setTextColor(color)
-//        if (color == Color.BLUE) {
-//            outlineTextView.setTextColor(Color.BLACK) //白色字体要用黑色描边
-//        } else {
-//            outlineTextView.setTextColor(Color.BLUE) //否则用白色描边
+    fun setStrokeColor(color: Int) {
+        outlineTextView.setTextColor(color)
+    }
+
+    override fun setText(text: CharSequence?, type: BufferType?) {
+        super.setText(text, type)
+//        post {
+//            val fontMetrics = paint?.fontMetrics
+//            val ascent = fontMetrics?.ascent ?: 0f
+//            val descent = fontMetrics?.descent ?: 0f
+//            val textHeight: Float = Math.abs(ascent) + Math.abs(descent)
+//            val gradientH = textHeight * lineSpacingMultiplier*1.6f
+//            if (textHeight != 0f) {
+//                val gradient =
+//                    LinearGradient(0f, 0f, 0f, gradientH, mGradientColors, null, Shader.TileMode.CLAMP)
+//                outlineTextView.paint.shader = gradient
+//            }
+//            val typeface = Typeface.createFromAsset(context.getAssets(), "fonts/test.ttf")
+//            setTypeface(typeface)
+//            outlineTextView.setTypeface(typeface)
+//            invalidate()
 //        }
-//    }
+    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)

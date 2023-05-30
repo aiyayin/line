@@ -26,6 +26,8 @@ public class ViewPagerActivity extends BaseActivity {
         ViewPager viewPager = findViewById(R.id.viewpager);
         ViewPager viewPager2 = findViewById(R.id.viewpager_2);
         viewPager.setPageMargin(30);
+        viewPager.setPageTransformer(true,new AlphaTransformer());
+//        viewPager2.setPageTransformer(true,new AlphaTransformer());
         viewPager2.setPageMargin(30);
         viewPager.setOffscreenPageLimit(3);
 
