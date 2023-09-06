@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.line.demo.yu.LineChartView
@@ -24,19 +25,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_2"
         android:gravity="center"
         android:text="ewqrq"
-        android:background="#EC93FB"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:background="#F2CCF8"
         android:layout_marginTop="@dimen/dp_40"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stroke_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="160dp"
+        android:layout_height="50dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_3"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:text="ewqrq"
+        android:background="#F2CCF8"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_width="160dp"
+        android:layout_height="50dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_4"
+        android:gravity="center"
+        android:text="ewqrq"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:ellipsize="end"
+        android:background="#F2CCF8"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_width="160dp"
+        android:layout_height="50dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

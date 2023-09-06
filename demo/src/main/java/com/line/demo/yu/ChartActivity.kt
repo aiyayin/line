@@ -7,11 +7,9 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
-import android.text.SpannableString
-import android.text.Spanned
 import android.util.TypedValue
 import android.widget.TextView
-import androidx.annotation.RequiresApi
+import androidx.core.widget.TextViewCompat
 import com.line.base.BaseActivity
 import com.yin.lin.demo.R
 
@@ -73,29 +71,70 @@ class ChartActivity : BaseActivity() {
         val content2 = "主播名字"
         text.setText(content2)
 
-    }
 
-    private fun requestManageExternalStoragePermission() {
-        val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-        intent.data = Uri.parse("package:" + packageName)
+        val text2 = findViewById<TextView>(R.id.text_2)
 
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivityForResult(intent, REQUEST_MANAGE_EXTERNAL_STORAGE_PERMISSION)
-        } else {
-            // 设备不支持 ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
+        try {
+            //设备兼容性问题
+            TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(text2,
+                intArrayOf(8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18),
+                TypedValue.COMPLEX_UNIT_SP)
+        } catch (e: Exception) {
+
         }
-    }
 
-    @RequiresApi(Build.VERSION_CODES.R)
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        text2.setText("测试一下字体=自身缩放")
 
-        if (requestCode == REQUEST_MANAGE_EXTERNAL_STORAGE_PERMISSION) {
-            if (Environment.isExternalStorageManager()) {
-                // 已授予 MANAGE_EXTERNAL_STORAGE 权限
-            } else {
-                // 未授予 MANAGE_EXTERNAL_STORAGE 权限
-            }
+        val text3 = findViewById<TextView>(R.id.text_3)
+
+        try {
+            //设备兼容性问题
+            TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(text3,
+                intArrayOf(8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18),
+                TypedValue.COMPLEX_UNIT_SP)
+        } catch (e: Exception) {
+
         }
+
+        text3.setText("测试一下字体=自身缩放=无scaleX=测测测测测=")
+
+        val text4 = findViewById<TextView>(R.id.text_4)
+
+        try {
+            //设备兼容性问题
+            TextViewCompat.setAutoSizeTextTypeUniformWithPresetSizes(text4,
+                intArrayOf(8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18),
+                TypedValue.COMPLEX_UNIT_SP)
+        } catch (e: Exception) {
+
+        }
+        text4.scaleX = 1.2f
+        text4.scaleY = 1.2f
+
+        text4.setText("测试一下字体=自身缩放=有scaleX=测测测测测=")
     }
+
+//    private fun requestManageExternalStoragePermission() {
+//        val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
+//        intent.data = Uri.parse("package:" + packageName)
+//
+//        if (intent.resolveActivity(packageManager) != null) {
+//            startActivityForResult(intent, REQUEST_MANAGE_EXTERNAL_STORAGE_PERMISSION)
+//        } else {
+//            // 设备不支持 ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
+//        }
+//    }
+//
+//    @RequiresApi(Build.VERSION_CODES.R)
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//
+//        if (requestCode == REQUEST_MANAGE_EXTERNAL_STORAGE_PERMISSION) {
+//            if (Environment.isExternalStorageManager()) {
+//                // 已授予 MANAGE_EXTERNAL_STORAGE 权限
+//            } else {
+//                // 未授予 MANAGE_EXTERNAL_STORAGE 权限
+//            }
+//        }
+//    }
 }
