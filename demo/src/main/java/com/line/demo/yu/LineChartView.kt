@@ -30,9 +30,9 @@ class LineChartView @JvmOverloads constructor(
     var specialZero: Boolean = true
     var yRange = 100
     var numYTicks = 4
-    var pointList: MutableList<Float>? = null
+    var pointList: List<Float>? = null
     var labelY = "%"
-    var labelX: MutableList<String>? = null
+    var labelX: List<String>? = null
 
     init {
 
@@ -65,16 +65,6 @@ class LineChartView @JvmOverloads constructor(
      * 设置线颜色
      * @param color Int
      */
-    fun setLabelColor(color: Int) {
-        textPaint.color = color
-        axisPaint.color = color
-        dashPaint.color = color
-    }
-
-    /**
-     * 设置线颜色
-     * @param color Int
-     */
     fun setLineColor(color: Int) {
         linePaint.color = color
     }
@@ -85,6 +75,16 @@ class LineChartView @JvmOverloads constructor(
      */
     fun setPointColor(color: Int) {
         pointPaint.color = color
+    }
+
+    /**
+     * 设置轴颜色
+     * @param color Int
+     */
+    fun setLabelColor(color: Int) {
+        textPaint.color = color
+        axisPaint.color = color
+        dashPaint.color = color
     }
 
 
@@ -160,13 +160,15 @@ class LineChartView @JvmOverloads constructor(
                 val isZero = specialZero && list[i] == 0f
                 if (isZero) {
                     shouldDash = true
-                    canvas.drawLine(lastPosX, lastPosY, xPos, yPos, dashPaint)
+                        canvas.drawLine(lastPosX, lastPosY, xPos, yPos, dashPaint)
                 } else {
                     if (shouldDash) {
                         canvas.drawLine(lastPosX, lastPosY, xPos, yPos, dashPaint)
                         shouldDash = false
                     } else {
-                        canvas.drawLine(lastPosX, lastPosY, xPos, yPos, linePaint)
+                        if (i != 0) {
+                            canvas.drawLine(lastPosX, lastPosY, xPos, yPos, linePaint)
+                        }
                     }
                 }
                 lastPosX = xPos

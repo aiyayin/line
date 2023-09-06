@@ -18,10 +18,25 @@
     <com.line.demo.yu.StrokeTextView
         android:id="@+id/stroke_text"
         android:gravity="center"
+        android:background="#82B6EA"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chart"
-        android:layout_width="300dp"
-        android:layout_margin="40dp"
-        android:layout_height="200dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_2"
+        android:gravity="center"
+        android:text="ewqrq"
+        android:background="#EC93FB"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stroke_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

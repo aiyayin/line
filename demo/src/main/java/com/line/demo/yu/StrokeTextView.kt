@@ -3,6 +3,7 @@ package com.line.demo.yu
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
@@ -14,7 +15,11 @@ import androidx.appcompat.widget.AppCompatTextView
  * @author zhonghua
  * @date 2019/5/8
  */
-class StrokeTextView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
+class StrokeTextView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) :
     AppCompatTextView(context, attrs, defStyleAttr) {
     private var mGradientColors = intArrayOf(Color.GREEN, Color.GRAY)
 
@@ -36,10 +41,11 @@ class StrokeTextView @JvmOverloads constructor(context: Context, attrs: Attribut
         val paint = outlineTextView.paint
         paint.strokeWidth = 20f // 描边宽度
         paint.style = Paint.Style.STROKE
-        outlineTextView.gravity = gravity
-        outlineTextView.setTextColor(Color.RED)
+        outlineTextView.setBackgroundColor(Color.parseColor("#4f123456"))
+        outlineTextView.gravity = Gravity.CENTER
+        outlineTextView.setTextColor(Color.GRAY)
         outlineTextView.typeface = Typeface.DEFAULT_BOLD
-//        outlineTextView.setPadding(18, 2, 20, 0)
+//        outlineTextView.setPadding(0, 0, 0, 0)
 
 
 //        setLineSpacing(0f, 0.8f)
@@ -59,16 +65,27 @@ class StrokeTextView @JvmOverloads constructor(context: Context, attrs: Attribut
 
     override fun setPadding(left: Int, top: Int, right: Int, bottom: Int) {
         super.setPadding(left, top, right, bottom)
-        outlineTextView.setPadding(left, top, right, bottom)
+        outlineTextView.setPadding(0, top, 0, bottom)
     }
 
     fun setStrokeColor(color: Int) {
         outlineTextView.setTextColor(color)
     }
 
+    override fun setLineSpacing(add: Float, mult: Float) {
+        super.setLineSpacing(add, mult)
+        outlineTextView.setLineSpacing(add, mult)
+    }
+
+    override fun setLetterSpacing(mult: Float) {
+        super.setLetterSpacing(mult)
+        outlineTextView.setLetterSpacing(mult)
+    }
+
+
     override fun setText(text: CharSequence?, type: BufferType?) {
         super.setText(text, type)
-//        post {
+        post {
 //            val fontMetrics = paint?.fontMetrics
 //            val ascent = fontMetrics?.ascent ?: 0f
 //            val descent = fontMetrics?.descent ?: 0f
@@ -79,23 +96,18 @@ class StrokeTextView @JvmOverloads constructor(context: Context, attrs: Attribut
 //                    LinearGradient(0f, 0f, 0f, gradientH, mGradientColors, null, Shader.TileMode.CLAMP)
 //                outlineTextView.paint.shader = gradient
 //            }
-//            val typeface = Typeface.createFromAsset(context.getAssets(), "fonts/test.ttf")
-//            setTypeface(typeface)
-//            outlineTextView.setTypeface(typeface)
-//            invalidate()
-//        }
-    }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-
-        // 设置轮廓文字
-        val outlineText = outlineTextView.text
-        if (outlineText == null || outlineText != this.text) {
-            outlineTextView.text = text
-            postInvalidate()
+            // 设置轮廓文字
+            val outlineText = outlineTextView.text
+            if (outlineText == null || outlineText != this.text) {
+                outlineTextView.text = text
+                postInvalidate()
+            }
+            val typeface = Typeface.createFromAsset(context.getAssets(), "fonts/SourceHanSansCN-Regular.ttf")
+            setTypeface(typeface)
+            outlineTextView.setTypeface(typeface)
+            invalidate()
         }
-        outlineTextView.measure(widthMeasureSpec, heightMeasureSpec)
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {

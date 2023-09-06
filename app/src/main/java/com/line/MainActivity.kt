@@ -21,6 +21,7 @@ import com.line.base.recyclerview.MainActivityAdapter
 
 class MainActivity : BaseActivity() {
     lateinit var activityItems: MutableList<Any>
+    private val MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +30,16 @@ class MainActivity : BaseActivity() {
         val pid = Process.myPid()
         Log.d("yin>>", "MainActivity 当前进程ID为：$pid")
 
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                this@MainActivity,
-                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                READ_EXTERNAL_STORAGE_PERMISSION_ID
-            )
-        }
+//        if (ContextCompat.checkSelfPermission(this,
+//                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//            != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE),
+                MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE)
+//        } else {
+//            // 权限已授予，执行相关操作
+//        }
         val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         activityItems = mainViewModel.getItemList()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
@@ -77,22 +77,22 @@ class MainActivity : BaseActivity() {
     }
 
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        results: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, results)
-        if (requestCode == READ_EXTERNAL_STORAGE_PERMISSION_ID) {
-            if (results.isNotEmpty() && results[0] == PackageManager.PERMISSION_GRANTED) {
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE -> {
+                // 如果请求被取消，则结果数组为空。
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // 权限已授予，执行相关操作
+                } else {
+                    // 权限被拒绝，禁止执行相关操作或显示信息
+                }
+                return
             }
         }
     }
 
-
-    companion object {
-        private const val READ_EXTERNAL_STORAGE_PERMISSION_ID = 1
-    }
 
 
 }
