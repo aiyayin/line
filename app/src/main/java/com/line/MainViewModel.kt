@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.yingfu.line.R
 import com.line.base.entity.ActivityItem
 import com.line.demo.yu.ChartActivity
+import com.line.demo.yu.MattingActivity
 import com.line.view.line.IndexLineActivity
 import com.line.view.viewpager.ViewPagerActivity
 
@@ -50,6 +51,7 @@ class MainViewModel : ViewModel() {
 //            ActivityItem("Sensor3D", R.drawable.ic_vr, SensorActivity::class.java),
 //            ActivityItem("AIDL", R.drawable.ic_line, MainAIDLActivity::class.java),
             ActivityItem("Chart", R.drawable.ic_list,ChartActivity::class.java),
+            ActivityItem("Matting", R.drawable.ic_list,MattingActivity::class.java),
             ActivityItem("viewpager", R.drawable.ic_list,ViewPagerActivity::class.java)
         )
     }

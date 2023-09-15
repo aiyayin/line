@@ -1,65 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
-    <com.line.demo.yu.LineChartView
-        android:id="@+id/chart"
-        android:layout_margin="20dp"
-        android:background="#4D96C1EB"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="212dp"/>
-
-    <com.line.demo.yu.StrokeTextView
-        android:id="@+id/stroke_text"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="#82B6EA"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:orientation="vertical">
 
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_2"
-        android:gravity="center"
-        android:text="ewqrq"
-        android:maxLines="1"
-        android:textSize="18sp"
-        android:ellipsize="end"
-        android:background="#F2CCF8"
-        android:layout_marginTop="@dimen/dp_40"
-        android:layout_width="160dp"
-        android:layout_height="50dp"/>
+        <com.line.demo.yu.LineChartView
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="212dp"
+            android:layout_margin="20dp"
+            android:background="#4D96C1EB"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_3"
-        android:gravity="center"
-        android:maxLines="1"
-        android:textSize="18sp"
-        android:ellipsize="end"
-        android:text="ewqrq"
-        android:background="#F2CCF8"
-        android:layout_marginTop="@dimen/dp_40"
-        android:layout_width="160dp"
-        android:layout_height="50dp"/>
+        <com.line.demo.yu.StrokeTextView
+            android:id="@+id/stroke_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#82B6EA"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chart" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_4"
-        android:gravity="center"
-        android:text="ewqrq"
-        android:maxLines="1"
-        android:textSize="18sp"
-        android:ellipsize="end"
-        android:background="#F2CCF8"
-        android:layout_marginTop="@dimen/dp_40"
-        android:layout_width="160dp"
-        android:layout_height="50dp"/>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_2"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_40"
+            android:background="#F2CCF8"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="ewqrq"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_3"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_40"
+            android:background="#F2CCF8"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="ewqrq"
+            android:textSize="18sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_4"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp_40"
+            android:background="#F2CCF8"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="ewqrq"
+            android:textSize="18sp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

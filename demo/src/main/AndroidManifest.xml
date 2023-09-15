@@ -15,5 +15,6 @@
         <activity android:name="com.line.demo.opengl.panorama.video360.GoogleVideoActivity" />
         <activity android:name="com.line.demo.opengl.SensorActivity" />
         <activity android:name="com.line.demo.yu.ChartActivity" />
+        <activity android:name="com.line.demo.yu.MattingActivity" />
     </application>
 </manifest>
