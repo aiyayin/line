@@ -1,17 +1,9 @@
-package com.line.demo.yu
+package com.line.demo.yu.segment
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
-import android.view.View
-import android.widget.TextView
-import androidx.core.widget.TextViewCompat
-import androidx.customview.widget.ViewDragHelper
 import com.line.base.BaseActivity
 import com.line.base.util.ToolUtil.alphaShow
-import com.yin.lin.demo.R
-import com.yin.lin.demo.databinding.ActivityChartBinding
 import com.yin.lin.demo.databinding.ActivityMattingBinding
 
 

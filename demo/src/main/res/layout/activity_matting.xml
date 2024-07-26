@@ -8,12 +8,12 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.line.demo.yu.DragLayout
+    <com.line.demo.yu.segment.DragLayout
         android:id="@+id/drag_layout"
         android:layout_width="200dp"
         android:layout_height="wrap_content">
 
-        <com.line.demo.yu.MattingBgImageView
+        <com.line.demo.yu.segment.MattingBgImageView
             android:id="@+id/iv_renwu_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.line.demo.yu.SegmentImageView
+        <com.line.demo.yu.segment.SegmentImageView
             android:id="@+id/iv_renwu_amin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,9 +34,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </com.line.demo.yu.DragLayout>
+    </com.line.demo.yu.segment.DragLayout>
 
-    <com.line.demo.yu.RenwuImageView
+    <com.line.demo.yu.segment.RenwuImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/dp_40"

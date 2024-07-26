@@ -1,4 +1,4 @@
-package com.line.demo.yu
+package com.line.demo.yu.segment
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator

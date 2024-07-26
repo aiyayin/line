@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
 
-        <com.line.demo.yu.LineChartView
+        <com.line.demo.yu.chart.LineChartView
             android:id="@+id/chart"
             android:layout_width="match_parent"
             android:layout_height="212dp"
@@ -20,7 +20,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.line.demo.yu.StrokeTextView
+        <com.line.demo.yu.chart.StrokeTextView
             android:id="@+id/stroke_text"
             android:layout_width="160dp"
             android:layout_height="wrap_content"

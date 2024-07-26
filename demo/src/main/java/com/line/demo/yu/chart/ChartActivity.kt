@@ -1,9 +1,7 @@
-package com.line.demo.yu
+package com.line.demo.yu.chart
 
 import android.graphics.Color
-import android.graphics.Matrix
 import android.graphics.Rect
-import android.graphics.RectF
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.Log
@@ -12,9 +10,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.TextViewCompat
 import com.line.base.BaseActivity
+import com.line.demo.yu.segment.PathUtil
+import com.line.demo.yu.round.RoundedDrawable
 import com.yin.lin.demo.R
 import com.yin.lin.demo.databinding.ActivityChartBinding
-import kotlin.math.roundToInt
 
 
 class ChartActivity : BaseActivity() {
@@ -72,8 +71,7 @@ class ChartActivity : BaseActivity() {
         }
         text4.setText("测试一下字体=自身缩放=有scaleX=测测测测测=")
 
-        text4.setBackgroundDrawable(RoundedDrawable.fromBitmapDrawable(this,
-            ContextCompat.getDrawable(this,R.drawable.ic_cover_close) as BitmapDrawable?))
+        text4.setBackgroundDrawable(RoundedDrawable.fromBitmapDrawable(this, ContextCompat.getDrawable(this, R.drawable.ic_cover_close) as BitmapDrawable?))
 
         text4?.postDelayed({
             Log.d("drag",

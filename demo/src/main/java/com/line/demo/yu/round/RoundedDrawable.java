@@ -1,4 +1,4 @@
-package com.line.demo.yu;
+package com.line.demo.yu.round;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,8 +12,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-
-import com.douyu.lib.utils.DYDensityUtils;
 
 public class RoundedDrawable extends Drawable {
     private final Paint mPaint;

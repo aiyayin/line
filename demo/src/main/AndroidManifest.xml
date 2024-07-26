@@ -14,9 +14,9 @@
         <activity android:name="com.line.demo.opengl.panorama.OpenGLActivity" />
         <activity android:name="com.line.demo.opengl.panorama.video360.GoogleVideoActivity" />
         <activity android:name="com.line.demo.opengl.SensorActivity" />
-        <activity android:name="com.line.demo.yu.ChartActivity" />
-        <activity android:name="com.line.demo.yu.MattingActivity" />
-        <activity android:name="com.line.demo.yu.ImageTestActivity" />
-        <activity android:name="com.line.demo.yu.ImageTestActivity2" />
+        <activity android:name="com.line.demo.yu.chart.ChartActivity" />
+        <activity android:name="com.line.demo.yu.segment.MattingActivity" />
+        <activity android:name="com.line.demo.yu.round.ImageTestActivity" />
+        <activity android:name="com.line.demo.yu.segment.SegmentActivity" />
     </application>
 </manifest>

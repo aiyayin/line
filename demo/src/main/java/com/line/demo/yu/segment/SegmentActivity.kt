@@ -1,9 +1,7 @@
-package com.line.demo.yu
+package com.line.demo.yu.segment
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.Rect
-import android.graphics.RectF
 import android.net.Uri
 import android.os.Bundle
 import com.douyu.lib.image.DYImageLoader
@@ -13,7 +11,7 @@ import tv.douyu.lib.ui.imagecroppicker.imagecropper.callback.BitmapCropCallback
 import java.io.File
 
 
-class ImageTestActivity2 : BaseActivity() {
+class SegmentActivity : BaseActivity() {
 
     lateinit var binding: ActivityTestImage2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +33,8 @@ class ImageTestActivity2 : BaseActivity() {
 
             mIsRotateEnabled = false //这个打开可以进行双指旋转
 
-            val outPutUri = getOutPutUri(this@ImageTestActivity2)
-            val uri = getInPutUri(this@ImageTestActivity2)
+            val outPutUri = getOutPutUri(this@SegmentActivity)
+            val uri = getInPutUri(this@SegmentActivity)
             if (uri != null) {
                 setImageUri(uri, outPutUri)
             }

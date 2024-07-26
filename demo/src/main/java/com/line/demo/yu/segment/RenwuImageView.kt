@@ -1,17 +1,11 @@
-package com.line.demo.yu
+package com.line.demo.yu.segment
 
-import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
-import android.view.View
-import android.view.ViewOutlineProvider
-import android.view.animation.LinearInterpolator
 import androidx.appcompat.widget.AppCompatImageView
 import com.line.base.util.ToolUtil
 import com.yin.lin.demo.R
-import kotlin.math.sqrt
 
 
 /**
