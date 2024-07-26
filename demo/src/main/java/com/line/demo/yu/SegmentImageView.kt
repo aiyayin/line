@@ -7,7 +7,6 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.util.Log
-import android.view.View
 import android.view.animation.LinearInterpolator
 import androidx.appcompat.widget.AppCompatImageView
 
@@ -19,7 +18,7 @@ import androidx.appcompat.widget.AppCompatImageView
  * @date 2023/9/12
  *
  */
-class MattingImageView @JvmOverloads constructor(
+class SegmentImageView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,

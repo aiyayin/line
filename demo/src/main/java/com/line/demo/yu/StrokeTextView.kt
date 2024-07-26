@@ -37,13 +37,14 @@ class StrokeTextView @JvmOverloads constructor(
      * init
      */
     fun init() {
+        maxLines = 1
 //        setPadding(20, 0, 20, 0)
         val paint = outlineTextView.paint
         paint.strokeWidth = 20f // 描边宽度
         paint.style = Paint.Style.STROKE
         outlineTextView.setBackgroundColor(Color.parseColor("#4f123456"))
-        outlineTextView.gravity = Gravity.CENTER
         outlineTextView.setTextColor(Color.GRAY)
+        outlineTextView.maxLines = 1
         outlineTextView.typeface = Typeface.DEFAULT_BOLD
 //        outlineTextView.setPadding(0, 0, 0, 0)
 

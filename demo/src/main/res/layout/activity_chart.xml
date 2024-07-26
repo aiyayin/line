@@ -22,10 +22,9 @@
 
         <com.line.demo.yu.StrokeTextView
             android:id="@+id/stroke_text"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:background="#82B6EA"
-            android:gravity="center"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chart" />
 

@@ -16,5 +16,7 @@
         <activity android:name="com.line.demo.opengl.SensorActivity" />
         <activity android:name="com.line.demo.yu.ChartActivity" />
         <activity android:name="com.line.demo.yu.MattingActivity" />
+        <activity android:name="com.line.demo.yu.ImageTestActivity" />
+        <activity android:name="com.line.demo.yu.ImageTestActivity2" />
     </application>
 </manifest>

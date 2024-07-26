@@ -51,6 +51,9 @@ dependencies {
     implementation OpenLibs.glide
     implementation OpenLibs.glide_okhttp3_integration
     implementation OpenLibs.commons_text
+    api "com.douyu.lib:LibDYImage:2.1.41"
+    api "com.douyu.lib:LibScaleView:2.0.2"
+    api "com.douyu.lib:LibUI:1.4.109"
 
     implementation project(path: ':base')
 }
