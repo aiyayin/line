@@ -5,6 +5,7 @@ import com.example.yingfu.line.R
 import com.line.base.entity.ActivityItem
 import com.line.demo.yu.chart.ChartActivity
 import com.line.demo.yu.round.ImageTestActivity
+import com.line.demo.yu.scale.ScaleActivity
 import com.line.demo.yu.segment.SegmentActivity
 import com.line.demo.yu.segment.MattingActivity
 import com.line.view.line.IndexLineActivity
@@ -56,7 +57,8 @@ class MainViewModel : ViewModel() {
             ActivityItem("Matting", R.drawable.ic_list, MattingActivity::class.java),
             ActivityItem("Image", R.drawable.ic_list, ImageTestActivity::class.java),
             ActivityItem("Image2", R.drawable.ic_list, SegmentActivity::class.java),
-            ActivityItem("viewpager", R.drawable.ic_list,ViewPagerActivity::class.java)
+            ActivityItem("viewpager", R.drawable.ic_list,ViewPagerActivity::class.java),
+            ActivityItem("scale", R.drawable.ic_list, ScaleActivity::class.java),
         )
     }
 }

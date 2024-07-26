@@ -18,5 +18,6 @@
         <activity android:name="com.line.demo.yu.segment.MattingActivity" />
         <activity android:name="com.line.demo.yu.round.ImageTestActivity" />
         <activity android:name="com.line.demo.yu.segment.SegmentActivity" />
+        <activity android:name="com.line.demo.yu.scale.ScaleActivity" />
     </application>
 </manifest>

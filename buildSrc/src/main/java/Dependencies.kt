@@ -63,4 +63,6 @@ object OpenLibs {
     const val glide_okhttp3_integration = "com.github.bumptech.glide:okhttp3-integration:4.12.0"
 
     const val commons_text = "org.apache.commons:commons-text:1.9"
+    const val codelocator_core = "com.bytedance.tools.codelocator:codelocator-core:2.0.3"
+    const val codelocator_core_support = "com.bytedance.tools.codelocator:codelocator-core-support:2.0.0"
 }

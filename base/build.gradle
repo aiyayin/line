@@ -59,6 +59,8 @@ dependencies {
     api Libs.activity
 
     api OpenLibs.CymChad_Adapter
+    api OpenLibs.codelocator_core
+//    api OpenLibs.codelocator_core_support
 
 
     api Compose.animation
