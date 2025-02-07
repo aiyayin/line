@@ -43,6 +43,7 @@ class ScaleActivity : BaseActivity() {
         })
 
 
+
         binding.llText.post {
             llTextPivotY = binding.llText.height.toFloat()
             bindScale()

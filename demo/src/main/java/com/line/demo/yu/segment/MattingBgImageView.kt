@@ -29,7 +29,7 @@ class MattingBgImageView @JvmOverloads constructor(
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         val path = mPath
         if (canvas != null && path != null) {
             val saveCount = canvas.save()

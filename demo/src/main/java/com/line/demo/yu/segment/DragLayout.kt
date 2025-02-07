@@ -155,7 +155,7 @@ class DragLayout @JvmOverloads constructor(
 
 
 
-    override fun dispatchDraw(canvas: Canvas?) {
+    override fun dispatchDraw(canvas: Canvas) {
         super.dispatchDraw(canvas)
         val scaleSize = scaleX
         val childTargetScaleX = 1 / scaleSize

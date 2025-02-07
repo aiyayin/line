@@ -3,6 +3,7 @@ package com.line
 import androidx.lifecycle.ViewModel
 import com.example.yingfu.line.R
 import com.line.base.entity.ActivityItem
+import com.line.compose.TestComposeActivity
 import com.line.demo.yu.chart.ChartActivity
 import com.line.demo.yu.round.ImageTestActivity
 import com.line.demo.yu.scale.ScaleActivity
@@ -18,7 +19,7 @@ import com.line.view.viewpager.ViewPagerActivity
  * @tapd
  */
 class MainViewModel : ViewModel() {
-    fun getItemList(): MutableList<Any> {
+    fun getItemList(): MutableList<ActivityItem> {
         return mutableListOf(
             ActivityItem("Line", R.drawable.ic_line, IndexLineActivity::class.java),
 //            ActivityItem("ScrollView", R.drawable.ic_list, ScrollViewActivity::class.java),
@@ -50,7 +51,7 @@ class MainViewModel : ViewModel() {
 //            ActivityItem("ArticleWeb", R.drawable.ic_book, ArticleWebActivity::class.java),
 //            ActivityItem("Web", R.drawable.ic_book, WebActivity::class.java),
 //            ActivityItem("ScrollWeb", R.drawable.ic_book, ScrollWebViewActivity::class.java),
-//            ActivityItem("compose", R.drawable.ic_book, TestComposeActivity::class.java),
+            ActivityItem("compose", R.drawable.ic_book, TestComposeActivity::class.java),
 //            ActivityItem("Sensor3D", R.drawable.ic_vr, SensorActivity::class.java),
 //            ActivityItem("AIDL", R.drawable.ic_line, MainAIDLActivity::class.java),
             ActivityItem("Chart", R.drawable.ic_list, ChartActivity::class.java),

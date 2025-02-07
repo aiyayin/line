@@ -58,7 +58,7 @@ class RenwuSVGImageView @JvmOverloads constructor(
     // 截取路径
     val dst = Path()
     val measure = PathMeasure()
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         if (canvas != null) {
             val path = pathUtil.path
             val saveCount = canvas.save()

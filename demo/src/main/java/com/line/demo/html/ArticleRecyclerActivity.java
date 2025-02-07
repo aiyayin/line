@@ -1,19 +1,20 @@
 package com.line.demo.html;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.chad.library.adapter.base.entity.MultiItemEntity;
-import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-import com.yin.lin.demo.R;
+import com.chad.library.adapter4.BaseMultiItemAdapter;
+import com.chad.library.adapter4.viewholder.QuickViewHolder;
 import com.line.base.BaseActivity;
+import com.yin.lin.demo.R;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
@@ -55,53 +56,60 @@ public class ArticleRecyclerActivity extends BaseActivity {
 
         }
 
-        adapter.setNewInstance(list);
+        adapter.setItems(list);
     }
 
-    public class ArticleAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, BaseViewHolder> {
+    public class ArticleAdapter extends BaseMultiItemAdapter<MultiItemEntity> {
 
         public ArticleAdapter(@Nullable List<MultiItemEntity> data) {
             super(data);
-            addItemType(0, R.layout.layout_article);
-            addItemType(1, R.layout.layout_article_img);
+            addItemType(0, new OnMultiItemAdapterListener<MultiItemEntity, RecyclerView.ViewHolder>() {
+                @NonNull
+                @Override
+                public RecyclerView.ViewHolder onCreate(@NonNull Context context, @NonNull ViewGroup viewGroup, int i) {
+                    return new QuickViewHolder(R.layout.layout_article, viewGroup);
+                }
+
+                @Override
+                public void onBind(@NonNull RecyclerView.ViewHolder viewHolder, int i, @Nullable MultiItemEntity multiItemEntity) {
+                    if (multiItemEntity == null) return;
+                    HtmlTextView textView = viewHolder.itemView.findViewById(R.id.text);
+                    textView.setHtml(((ArticleBean) multiItemEntity).content);
+                }
+            });
+
+            addItemType(1, new OnMultiItemAdapterListener<MultiItemEntity, RecyclerView.ViewHolder>() {
+                @NonNull
+                @Override
+                public RecyclerView.ViewHolder onCreate(@NonNull Context context, @NonNull ViewGroup viewGroup, int i) {
+                    return new QuickViewHolder(R.layout.layout_article_img, viewGroup);
+                }
+
+                @Override
+                public void onBind(@NonNull RecyclerView.ViewHolder viewHolder, int i, @Nullable MultiItemEntity multiItemEntity) {
+                    if (multiItemEntity == null) return;
+                    ImageView imageView = viewHolder.itemView.findViewById(R.id.image);
+                    Glide.with(viewHolder.itemView.getContext()).load(((ArticleImageBean) multiItemEntity).url).error(R.drawable.ic_demo_book).into(imageView);
+                }
+            });
         }
 
-
-        @Override
-        protected void convert(@NotNull BaseViewHolder baseViewHolder, MultiItemEntity multiItemEntity) {
-            if (multiItemEntity.getItemType() == 0) {
-                HtmlTextView textView = baseViewHolder.getView(R.id.text);
-                textView.setHtml(((ArticleBean) multiItemEntity).content);
-            } else {
-                ImageView imageView = baseViewHolder.getView(R.id.image);
-                Glide.with(baseViewHolder.itemView.getContext()).load(((ArticleImageBean) multiItemEntity).url).error(R.drawable.ic_demo_book).into(imageView);
-            }
-        }
     }
 
-    public class ArticleBean implements MultiItemEntity {
+    public static class ArticleBean implements MultiItemEntity {
         public String content;
 
         public ArticleBean(String content) {
             this.content = content;
         }
-
-        @Override
-        public int getItemType() {
-            return 0;
-        }
     }
 
-    public class ArticleImageBean implements MultiItemEntity {
+    public static class ArticleImageBean implements MultiItemEntity {
         public String url;
 
         public ArticleImageBean(String url) {
             this.url = url;
         }
-
-        @Override
-        public int getItemType() {
-            return 1;
-        }
     }
+
 }

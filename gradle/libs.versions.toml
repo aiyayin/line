@@ -1,0 +1,91 @@
+[versions]
+agp = "8.7.3"
+kotlin = "2.0.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.6.1"
+activityCompose = "1.8.0"
+composeBom = "2024.04.01"
+recyclerview = "1.2.1"
+composeCompiler = "1.5.3"
+
+
+appcompat = "1.4.1"
+activity = "1.4.0"
+material = "1.4.0"
+constraintlayout = "2.1.2"
+lifecycle = "2.7.0"
+nav = "2.7.3"
+dynamicanimation = "1.1.0-alpha03"
+gson = "2.8.5"
+
+cymchad-adapter = "4.1.4"
+html-textview = "4.0"
+glide = "4.12.0"
+commons-text = "1.9"
+codelocator-core = "2.0.3"
+codelocator-core-support = "2.0.0"
+
+dyimage = "2.1.41"
+scaleview = "2.0.2"
+ui = "1.4.109"
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "composeCompiler" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" } # 版本由 BOM 管理
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-material = { module = "androidx.compose.material:material" } # Material 2
+compose-foundation = { module = "androidx.compose.foundation:foundation"}
+compose-constraintlayout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1"}
+
+multidex = { module = "androidx.multidex:multidex", version = "2.0.1" }
+recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk7", version.ref = "kotlin" }
+lifecycle-extensions = { group = "androidx.lifecycle", name = "extensions", version.ref = "lifecycle" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+dynamicanimation = { group = "androidx.dynamicanimation", name = "dynamicanimation", version.ref = "dynamicanimation" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "nav" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+cymchad-adapter = { group = "io.github.cymchad", name = "BaseRecyclerViewAdapterHelper4", version.ref = "cymchad-adapter" }
+html-textview = { group = "org.sufficientlysecure", name = "html-textview", version.ref = "html-textview" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-okhttp3-integration = { group = "com.github.bumptech.glide", name = "okhttp3-integration", version.ref = "glide" }
+commons-text = { group = "org.apache.commons", name = "commons-text", version.ref = "commons-text" }
+codelocator-core = { group = "com.bytedance.tools.codelocator", name = "codelocator-core", version.ref = "codelocator-core" }
+codelocator-core-support = { group = "com.bytedance.tools.codelocator", name = "codelocator-core-support", version.ref = "codelocator-core-support" }
+
+
+
+douyu-lib-dyimage = { module = "com.douyu.lib:LibDYImage", version.ref = "dyimage" }
+douyu-lib-scaleview = { module = "com.douyu.lib:LibScaleView", version.ref = "scaleview" }
+douyu-lib-ui = { module = "com.douyu.lib:LibUI", version.ref = "ui" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-lib = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+

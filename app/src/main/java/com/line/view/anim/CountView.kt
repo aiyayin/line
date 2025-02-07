@@ -29,10 +29,10 @@ class CountView(context: Context?, attrs: AttributeSet?) : View(context, attrs) 
     private var mLinePaint: Paint= Paint()
     private fun init() {
         mPaint = Paint()
-        mPaint.color = resources.getColor(R.color.main_color_avocado)
+        mPaint.color = Color.parseColor("#78c66a")
         mPaint.isAntiAlias = true
         mCountPaint = Paint()
-        mCountPaint.color = resources.getColor(R.color.main_color_avocado)
+        mCountPaint.color = Color.parseColor("#78c66a")
         mCountPaint.isAntiAlias = true
         mCountBgPaint = Paint()
         mCountBgPaint.color = Color.WHITE

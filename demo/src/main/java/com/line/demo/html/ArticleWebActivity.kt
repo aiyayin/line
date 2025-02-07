@@ -3,6 +3,7 @@ package com.line.demo.html
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.chad.library.adapter4.BaseMultiItemAdapter
 import com.yin.lin.demo.R
 import com.line.base.BaseActivity
 import com.line.base.entity.TextItem
@@ -48,13 +49,13 @@ class ArticleWebActivity : BaseActivity() {
         recyclerView.layoutManager =
             StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.adapter = MainActivityAdapter(activityItems).apply {
-            addItemBinder(
-                WebViewItem::class.java,
-                WebViewItemBinder()
+            addItemType(
+                WebViewItem::class.java.hashCode(),
+                WebViewItemBinder() as BaseMultiItemAdapter.OnMultiItemAdapterListener<Any, RecyclerView.ViewHolder>
             )
-            addItemBinder(
-                TextItem::class.java,
-                TextItemBinder()
+            addItemType(
+                TextItem::class.java.hashCode(),
+                TextItemBinder() as BaseMultiItemAdapter.OnMultiItemAdapterListener<Any, RecyclerView.ViewHolder>
             )
 
         }

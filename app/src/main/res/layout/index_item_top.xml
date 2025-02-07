@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:background="#fff"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
 
 
     <com.line.view.line.ObservableScrollView
@@ -17,41 +17,47 @@
             android:id="@+id/top_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal" />
     </com.line.view.line.ObservableScrollView>
 
     <com.line.view.line.IndexLineView
         android:id="@+id/top_line"
         android:layout_width="24dp"
         android:layout_height="4dp"
-        app:index_color="@color/blue"
-        app:width="10dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/index_line_bg"/>
+        android:background="@drawable/index_line_bg"
+        app:index_color="@color/blue"
+        app:width="10dp" />
 
-<com.google.android.material.tabs.TabLayout
-    android:id="@+id/tab_layout"
-    android:layout_width="match_parent"
-    android:layout_height="40dp"
-    android:background="@color/blue"
-    android:scrollbars="none"/>
+    <com.line.view.line.ClipLeftFrameLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue"
+        android:scrollbars="none" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/top_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
-    </androidx.viewpager.widget.ViewPager>
+        android:layout_height="300dp" />
 
     <com.line.view.line.IndexLineView
         android:id="@+id/top_line_two"
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        app:index_color="@color/blue"
-        app:width="90dp"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:index_color="@color/blue"
+        app:width="90dp" />
 
 
+    <com.line.view.line.FloatTabTextView
+        android:id="@+id/float_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/cmm_dp_15"
+        android:paddingVertical="@dimen/cmm_dp_10"
+        android:text="第一个" />
 </LinearLayout>

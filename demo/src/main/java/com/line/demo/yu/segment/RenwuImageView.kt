@@ -95,7 +95,7 @@ class RenwuImageView @JvmOverloads constructor(
 
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         if (canvas != null) {
             val saveCount = canvas.save()
             canvas.clipPath(path) // 根据路径裁剪画布

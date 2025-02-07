@@ -70,8 +70,8 @@ class CirclePathAnimView @JvmOverloads constructor(context: Context?, attrs: Att
         //初始化画笔
         mPaint = Paint()
         mPaint.style = Paint.Style.STROKE
-        mPaint.strokeWidth = resources.getDimension(R.dimen.mtrl_calendar_month_horizontal_padding)
-        mPaint.color = resources.getColor(R.color.colorPrimary)
+        mPaint.strokeWidth = 10f
+        mPaint.color = Color.GREEN
 
         //飞机图片
         airplayBitmap = BitmapFactory.decodeResource(resources, R.drawable.fly)

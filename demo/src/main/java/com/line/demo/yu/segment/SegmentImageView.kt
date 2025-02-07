@@ -82,7 +82,7 @@ class SegmentImageView @JvmOverloads constructor(
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         val path = mPath
         if (canvas != null && path != null) {
             Log.d("svg", "path not null ")

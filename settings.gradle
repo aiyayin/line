@@ -1,4 +1,0 @@
-include ':base'
-include ':demo'// MyApp/settings.gradle
-include ':app'
-include ':javalib'

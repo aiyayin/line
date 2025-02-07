@@ -36,7 +36,7 @@ public class MainAIDLActivity extends Activity {
         Log.d("yin>>", "获取speakBinder对象...........");
         IBinder speakBinder = binderPool.queryBinder(BinderPool.BINDER_SPEAK);  // 2
         Log.d("yin>>", "获取speak的代理对象............");
-        mSpeak = (ISpeak) ISpeak.Stub.asInterface(speakBinder);    // 3 
+        mSpeak = (ISpeak) ISpeak.Stub.asInterface(speakBinder);    // 3
         try {
             mSpeak.speak();     // 4
         } catch (RemoteException e) {

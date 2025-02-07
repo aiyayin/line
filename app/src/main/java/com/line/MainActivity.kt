@@ -10,9 +10,10 @@ import android.os.Process
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.douyu.lib.base.DYEnvConfig
 import com.example.yingfu.line.R
 import com.line.base.BaseActivity
 import com.line.base.entity.ActivityItem
@@ -20,11 +21,12 @@ import com.line.base.recyclerview.MainActivityAdapter
 
 
 class MainActivity : BaseActivity() {
-    lateinit var activityItems: MutableList<Any>
+    lateinit var activityItems: MutableList<ActivityItem>
     private val MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        DYEnvConfig.application = application
         setContentView(R.layout.main_activity)
 
         val pid = Process.myPid()
@@ -40,7 +42,7 @@ class MainActivity : BaseActivity() {
 //        } else {
 //            // 权限已授予，执行相关操作
 //        }
-        val mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        val mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         activityItems = mainViewModel.getItemList()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager =

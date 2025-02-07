@@ -1,5 +1,6 @@
 package com.line.view.line;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -44,6 +45,12 @@ public class IndexLineActivity extends BaseActivity implements BlankFragment.OnF
 
     private void initViewPager() {
         mViewPager = findViewById(R.id.top_viewpager);
+        findViewById(R.id.float_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setSelected(!v.isSelected());
+            }
+        });
         mTabLayout = findViewById(R.id.tab_layout);
         mLineViewPager = findViewById(R.id.top_line_two);
         for (int i = 0; i < 4; i++) {

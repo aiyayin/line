@@ -1,7 +1,7 @@
 package com.line.base.recyclerview
 
-import com.chad.library.adapter.base.BaseBinderAdapter
-import com.line.base.entity.ActivityItem
+import androidx.recyclerview.widget.RecyclerView
+import com.chad.library.adapter4.BaseMultiItemAdapter
 
 /**
  *
@@ -11,9 +11,9 @@ import com.line.base.entity.ActivityItem
  * @tapd
  *
  */
-class MainActivityAdapter(list: MutableList<Any>? = null) : BaseBinderAdapter(list) {
+class MainActivityAdapter(list: List<Any>) : BaseMultiItemAdapter<Any>(list) {
 
     init {
-        addItemBinder(ActivityItem::class.java, ActivityItemBinder())
+        addItemType(0, ActivityItemBinder() as OnMultiItemAdapterListener<Any, RecyclerView.ViewHolder>)
     }
 }

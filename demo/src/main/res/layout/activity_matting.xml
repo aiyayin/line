@@ -17,7 +17,7 @@
             android:id="@+id/iv_renwu_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/dp_40"
+            android:layout_marginVertical="@dimen/cmm_dp_40"
             android:adjustViewBounds="true"
             android:src="@drawable/renwu"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +27,7 @@
             android:id="@+id/iv_renwu_amin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/dp_40"
+            android:layout_marginVertical="@dimen/cmm_dp_40"
             android:adjustViewBounds="true"
             android:src="@drawable/renwu"
             android:visibility="gone"
@@ -39,7 +39,7 @@
     <com.line.demo.yu.segment.RenwuImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/dp_40"
+        android:layout_marginVertical="@dimen/cmm_dp_40"
         android:adjustViewBounds="true"
         android:src="@drawable/renwu" />
 

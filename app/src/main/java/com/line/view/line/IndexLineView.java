@@ -36,7 +36,7 @@ public class IndexLineView extends View {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.IndexLineView, defStyleAttr, 0);
         indexWidth = typedArray.getDimensionPixelSize(R.styleable.IndexLineView_width, ToolUtil.dpToPx(context, 8));
-        indexColor = typedArray.getColor(R.styleable.IndexLineView_index_color, context.getResources().getColor(R.color.green));
+        indexColor = typedArray.getColor(R.styleable.IndexLineView_index_color, context.getResources().getColor(com.yin.line.base.R.color.green));
         typedArray.recycle();
         init();
     }

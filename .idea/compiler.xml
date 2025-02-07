@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="11">
+      <module name="line.app" target="17" />
+      <module name="line.base" target="17" />
+      <module name="line.buildSrc" target="17" />
+      <module name="line.buildSrc.main" target="17" />
+      <module name="line.buildSrc.test" target="17" />
+      <module name="line.demo" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
